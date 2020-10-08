@@ -60,6 +60,9 @@ const SkillsBlock = styled.div`
     flex-direction: column;
     padding: 1em;
     position: relative;
+    @media all and (max-width: 768px) {
+      padding: 0.5em;
+    }
   }
 
   .skills__work-desc {
@@ -67,7 +70,6 @@ const SkillsBlock = styled.div`
     width: 100%;
     margin: 0.3em;
     position: relative;
-
     .skills-desc {
       line-height: 42px;
       margin-left: 5px;

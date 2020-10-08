@@ -19,7 +19,9 @@ const NavBlock = styled.nav`
     .nav__items-list {
       padding: 1em;
       cursor: pointer;
-
+      @media all and (max-width: 768px) {
+        padding: 1em 0.5em;
+      }
       &:hover {
         background: #b9dedf;
         border-radius: 12px;
@@ -29,7 +31,9 @@ const NavBlock = styled.nav`
 
   .wrap__img {
     display: flex;
-
+    @media all and (max-width: 768px) {
+      padding-left: 1em;
+    }
     .nav__img {
       width: 35px;
       height: 35px;
@@ -40,6 +44,9 @@ const NavBlock = styled.nav`
 
     .nav__title {
       line-height: 24px;
+      @media all and (max-width: 768px) {
+        display: none;
+      }
     }
   }
 `;

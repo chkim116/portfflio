@@ -26,6 +26,7 @@ const SkillsBlock = styled.div`
   text-align: center;
   display: flex;
   position: relative;
+  justify-content: center;
   @media all and (max-width: 768px) {
     flex-direction: column;
   }
@@ -38,10 +39,14 @@ const SkillsBlock = styled.div`
   }
 
   .skills__wrap {
-    border: 1px solid black;
     width: 33%;
     padding: 1em;
     display: flex;
+    &:nth-child(2),
+    &:nth-child(3) {
+      border-right: 1px solid black;
+    }
+
     @media all and (max-width: 768px) {
       width: 80%;
       margin: 0 auto;
@@ -150,7 +155,7 @@ export const SkillsForm = () => {
               <span className="skills-desc">REDUX</span>
             </div>
             <div className="skills__work-desc">
-              <SiNextDotJs size={42} fill="#A06940" />
+              <SiNextDotJs size={42} fill="#000000" />
               <span className="skills-desc">NEXTJS</span>
             </div>
             <div className="skills__work-desc">
@@ -162,7 +167,7 @@ export const SkillsForm = () => {
               <span className="skills-desc">MongoDB</span>
             </div>
             <div className="skills__work-desc">
-              <FaAws size={42} fill="#883022" />
+              <FaAws size={42} fill="#F79400" />
               <span className="skills-desc">AWS S3</span>
             </div>
           </div>

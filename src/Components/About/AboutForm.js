@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import profile from "../../assets/images/증명사진.jpg";
 
 const AboutBlock = styled.div`
@@ -13,6 +13,7 @@ const AboutBlock = styled.div`
       align-items: center;
     }
   }
+  
   .about__wrap {
     display: flex;
     flex-direction: column;
@@ -62,8 +63,9 @@ const AboutBlock = styled.div`
     border-radius: 50%;
     padding: 0.2em;
     object-fit: cover;
-    border: 1px solid black;
+    border: 2px solid #e574a4;
   }
+
   .about__profile-desc {
     position: relative;
   }
@@ -83,7 +85,7 @@ const AboutBlock = styled.div`
 export const AboutForm = () => {
   return (
     <AboutBlock className="About">
-      <h1 className="portfoilo__title">About</h1>
+      <h1 className="portfoilo__title ">About</h1>
       <div className="about">
         <div className="about__wrap">
           <div className="about__profile-box">
@@ -127,14 +129,22 @@ export const AboutForm = () => {
                     분당서현청소년수련관 자치동아리 "따봉"
                   </td>
                 </tr>
+                <tr>
+                  <td>
                 <small>2018.03~ 단장역임</small>
+                  </td>
+                </tr>
               </tbody>
               <h3 className="about__career-title">경력</h3>
               <tbody>
                 <tr>
                   <td className="about__career-desc">분당정자청소년수련관</td>
                 </tr>
+                <tr>
+                  <td>
                 <small>2019.06~08 실습</small>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>

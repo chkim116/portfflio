@@ -114,6 +114,7 @@ const ProjectModalBlock = styled.div`
       width: 250px;
       flex-direction: column;
       margin: 0 auto;
+      padding-bottom: 1em;
     }
   }
 `;

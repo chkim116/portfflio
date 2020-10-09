@@ -73,9 +73,10 @@ export const Nav = () => {
   const navList = ["Home", "About", "Skills", "Project", "Contact"];
   const onClick = useCallback((e) => {
     const ref = e.target.dataset.ref;
+    const width = window.innerWidth;
     document.querySelector(`.${ref}`).scrollIntoView({
       behavior: "smooth",
-      block: ref === "Project" ? "start" : "center",
+      block: ref === "Project" || width < 769 ? "start" : "center",
     });
   }, []);
 

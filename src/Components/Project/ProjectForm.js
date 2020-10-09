@@ -38,7 +38,7 @@ export const ProjectForm = () => {
     !show ? setShow(true) : setShow(false);
     const title = e.target.dataset.title;
     setTitle(title);
-  }, []);
+  }, [show]);
 
   const onClose = useCallback(() => {
     setTitle("");
@@ -59,6 +59,7 @@ export const ProjectForm = () => {
         (title === "프로젝트3" && "NEXTJS") ||
         (title === "프로젝트4" && "VUEJS"),
     });
+    // eslint-disable-next-line
   }, [title]);
 
   return (

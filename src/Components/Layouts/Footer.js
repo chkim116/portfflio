@@ -6,7 +6,7 @@ const FooterBlock = styled.footer`
   flex-direction: column;
   width: 100%;
   text-align: center;
-  padding: 1em;
+  padding: 4em;
 `;
 
 export const Footer = () => {

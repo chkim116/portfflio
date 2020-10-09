@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 import profile from "../../assets/images/증명사진.jpg";
 
@@ -71,24 +71,31 @@ const NavList = ({ navList, onClick }) => {
 
 export const Nav = () => {
   const navList = ["Home", "About", "Skills", "Project", "Contact"];
+  const [bgColor, setBgColor] = useState("");
+
   const onClick = useCallback((e) => {
     const ref = e.target.dataset.ref;
     const width = window.innerWidth;
+
     document.querySelector(`.${ref}`).scrollIntoView({
       behavior: "smooth",
       block: ref === "Project" || width < 769 ? "start" : "center",
     });
   }, []);
 
-  const [bgColor, setBgColor] = useState("");
 
-  document.addEventListener(
-    "scroll",
-    useCallback(() => {
-      const scrollY = window.scrollY;
-      scrollY > 54 ? setBgColor("#aad4da") : setBgColor("");
-    }, [])
-  );
+  const handleScrollIntoView = useCallback(() => {
+    const scrollY = window.scrollY;
+    scrollY > 54 ? setBgColor("#aad4da") : setBgColor("");
+  }, [])
+
+  useEffect(() => {
+    document.addEventListener("scroll", handleScrollIntoView);
+    return () => {
+      document.removeEventListener()
+    }
+    // eslint-disable-next-line 
+  }, [])
 
   return (
     <NavBlock bgColor={bgColor}>

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import  ProjectImg from "../../assets/images/sample.jpg";
 
 const ProjectGridBlock = styled.div`
   display: flex;
@@ -10,7 +11,9 @@ const ProjectGridBlock = styled.div`
   .project__imgbox {
     width: 100%;
     position: relative;
-    padding: 50%;
+    padding-bottom: 56.25%;
+    margin: 0.3em;
+
     .project__img {
       position: absolute;
       top: 0;
@@ -22,6 +25,7 @@ const ProjectGridBlock = styled.div`
 
   .project__more {
     margin: 1em auto;
+
     .projec__btn {
       background: #30a9de;
       cursor: pointer;
@@ -35,10 +39,10 @@ const ProjectGridBlock = styled.div`
 
 export const ProjectGrid = ({ onClick }) => {
   const project = [
-    { title: "프로젝트", img: "/" },
-    { title: "프로젝트2", img: "/" },
-    { title: "프로젝트3", img: "/" },
-    { title: "프로젝트4", img: "/" },
+    { title: "프로젝트", img: ProjectImg },
+    { title: "프로젝트2", img: ProjectImg },
+    { title: "프로젝트3", img: ProjectImg },
+    { title: "프로젝트4", img: ProjectImg },
   ];
 
   return (

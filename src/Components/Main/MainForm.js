@@ -24,9 +24,9 @@ const MainBlock = styled.main`
       position: absolute;
       width: 100%;
       height: 100%;
+      opacity: ${(props) => props.opacity};
       top: 0;
       z-index: 3;
-      opacity: ${(props) => props.opacity};
     }
 
     .section__img {

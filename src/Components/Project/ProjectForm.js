@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 import { ProjectGrid } from "./ProjectGrid";
 import { ProjectModal } from "./ProjectModal";
+import  ProjectImg  from "../../assets/images/sample.jpg"
 
 const ProjectBlock = styled.div`
   max-width: 1440px;
@@ -29,7 +30,7 @@ export const ProjectForm = () => {
   const [project, setProject] = useState({
     pageLink: "",
     gitLink: "",
-    imgUrl: "",
+    imgUrl: ProjectImg,
     stack: "",
     desc: "",
   });
@@ -49,9 +50,9 @@ export const ProjectForm = () => {
     if (!title) {
       return setProject("");
     }
-    console.log(title === "프로젝트3");
     setProject({
       ...project,
+      imgUrl: ProjectImg,
       desc: title,
       stack:
         (title === "프로젝트" && "HTML, CSS") ||

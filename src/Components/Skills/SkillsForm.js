@@ -45,6 +45,9 @@ const SkillsBlock = styled.div`
     &:nth-child(2),
     &:nth-child(3) {
       border-right: 1px solid black;
+      @media all and (max-width: 768px)  {
+        border: none;
+      }
     }
 
     @media all and (max-width: 768px) {

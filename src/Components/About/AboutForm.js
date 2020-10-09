@@ -63,7 +63,7 @@ const AboutBlock = styled.div`
     border-radius: 50%;
     padding: 0.2em;
     object-fit: cover;
-    border: 2px solid #e574a4;
+    border: 4px solid #e574a4;
   }
 
   .about__profile-desc {

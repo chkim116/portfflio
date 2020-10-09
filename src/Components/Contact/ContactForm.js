@@ -76,11 +76,11 @@ const ContactFormBlock = styled.form`
     &.btn {
       cursor: pointer;
       border-radius: 33px;
-      border: 1px solid rgba(0, 0, 0, 0.3);
+      font-weight: bold;
+      border: none;
+      background: #b9dedf;
       &:hover {
-        background: #b9dedf;
         color: #ffffff;
-        font-weight: bold;
       }
     }
 
@@ -103,6 +103,7 @@ export const ContactForm = () => {
     message: "",
   });
 
+
   const onChange = (e) => {
     const { name, value } = e.target;
     setSendMe({ ...sendMe, [name]: value });
@@ -118,6 +119,12 @@ export const ContactForm = () => {
         console.log(err);
         alert("알 수 없는 오류 전송실패입니다.");
       }
+      setSendMe({
+        username: "",
+        tel: "",
+        email: "",
+        message: "",
+      })
       setLoading(false)
     };
     sendMail();
@@ -166,18 +173,21 @@ export const ContactForm = () => {
               required
               placeholder="Name *"
               name="username"
+              defaultValue={sendMe.username}
             />
             <input
               className="contact__form-input"
               type="email"
               name="email"
               placeholder="Email *"
+              defaultValue={sendMe.email}
             />
             <input
               className="contact__form-input"
               type="tel"
               name="tel"
-              placeholder="PhoneNumber *"
+              placeholder="PhoneNumber"
+              defaultValue={sendMe.tel}
             />
             <textarea
               className="contact__form-input textarea"
@@ -185,6 +195,7 @@ export const ContactForm = () => {
               required
               name="message"
               placeholder="Message *"
+              defaultValue={sendMe.message}
             />
             <input
               className="contact__form-input btn"

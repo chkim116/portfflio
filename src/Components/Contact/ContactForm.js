@@ -114,7 +114,7 @@ export const ContactForm = () => {
     setLoading(true);
     const sendMail = async () => {
       try {
-        await Axios.post("/mail", sendMe).then(() => alert("메일 전송이 성공적으로 이뤄졌습니다!"));
+        await Axios.post("https://beprt.herokuapp.com/mail", sendMe).then(() => alert("메일 전송이 성공적으로 이뤄졌습니다!"));
       } catch (err) {
         console.log(err);
         alert("알 수 없는 오류 전송실패입니다.");

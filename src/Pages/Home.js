@@ -7,7 +7,7 @@ import { SkillsForm } from "../Components/Skills/SkillsForm";
 
 export const Home = () => {
   const [opacity, setOpacity] = useState(0.3);
-  const [textOpacity, setTextOpacity] = useState(1);
+  const [textOpacity, setTextOpacity] = useState(0);
   const scrollEvent = useCallback(() => {
       const scrollY = window.scrollY;
       const img = document.querySelector(".section__wrap-img");

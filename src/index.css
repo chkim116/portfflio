@@ -49,3 +49,21 @@ input {
   font-weight: normal;
   font-style: normal;
 }
+
+.portfoilo__title {
+  padding: 1em 0;
+  margin: 1em 0;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+.portfoilo__title::before {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10%;
+  height: 2px;
+  content: "";
+  background: #312e41;
+}

@@ -1,23 +1,32 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import profile from "../../assets/images/증명사진.jpg";
 
 const AboutBlock = styled.div`
   width: 100%;
-  margin: 5em 0;
-
+  .about {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    @media all and (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
   .about__wrap {
     display: flex;
     flex-direction: column;
     width: 350px;
     height: 350px;
-    border: 1px solid black;
-    border-radius: 12px;
+    border-right: 1px solid black;
     justify-content: center;
     align-items: center;
     padding: 1em;
-    margin: 0 auto;
 
+    @media all and (max-width: 768px) {
+      border-bottom: 1px solid black;
+      border-right: none;
+    }
     @media all and (max-width: 400px) {
       width: 200px;
       height: 200px;
@@ -58,36 +67,77 @@ const AboutBlock = styled.div`
   .about__profile-desc {
     position: relative;
   }
+
+  .about__career {
+    padding: 2em;
+    .about__career-title {
+      padding: 0.8em;
+    }
+    .about__career-desc {
+      padding-bottom: 0.2em;
+      border-bottom: 1px solid black;
+    }
+  }
 `;
 
 export const AboutForm = () => {
   return (
     <AboutBlock className="About">
-      <div className="about__wrap">
-        <div className="about__profile-box">
-          <div className="about__wrap-img">
-            <img className="about__profile" src={profile} alt="증명사진" />
+      <h1 className="portfoilo__title">About</h1>
+      <div className="about">
+        <div className="about__wrap">
+          <div className="about__profile-box">
+            <div className="about__wrap-img">
+              <img className="about__profile" src={profile} alt="증명사진" />
+            </div>
+          </div>
+          <div
+            style={{ background: "black", width: "100%", height: "1px" }}
+          ></div>
+          <br />
+          <div className="about__profile-desc">
+            <table>
+              <tbody>
+                <tr>
+                  <td>Name</td>
+                  <td>김창회</td>
+                </tr>
+                <tr>
+                  <td>Birth</td>
+                  <td>96.01.23</td>
+                </tr>
+                <tr>
+                  <td>Education</td>
+                  <td>백석대학교 사회복지학부</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
-        <div
-          style={{ background: "black", width: "100%", height: "1px" }}
-        ></div>
-        <br />
-        <div className="about__profile-desc">
-          <table>
-            <tr>
-              <td>이름:</td>
-              <td>김창회</td>
-            </tr>
-            <tr>
-              <td>생년월일:</td>
-              <td>96.01.23</td>
-            </tr>
-            <tr>
-              <td>학력:</td>
-              <td>백석대학교</td>
-            </tr>
-          </table>
+
+        <div className="about__career">
+          <h3>활동 사항 및 경력</h3>
+          <br></br>
+          <div>
+            <table>
+              <h3 className="about__career-title">활동 사항</h3>
+              <tbody>
+                <tr>
+                  <td className="about__career-desc">
+                    분당서현청소년수련관 자치동아리 "따봉"
+                  </td>
+                </tr>
+                <small>2018.03~ 단장역임</small>
+              </tbody>
+              <h3 className="about__career-title">경력</h3>
+              <tbody>
+                <tr>
+                  <td className="about__career-desc">분당정자청소년수련관</td>
+                </tr>
+                <small>2019.06~08 실습</small>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </AboutBlock>

@@ -23,7 +23,6 @@ const WrapSkill = styled.div`
 
 const SkillsBlock = styled.div`
   width: 100%;
-  margin: 5em 0;
   text-align: center;
   display: flex;
   position: relative;
@@ -104,7 +103,7 @@ const SkillsBlock = styled.div`
 export const SkillsForm = () => {
   return (
     <WrapSkill className="Skills">
-      <h1>Skills</h1>
+      <h1 className="portfoilo__title">Skills</h1>
       <SkillsBlock>
         <div className="skills-bg"></div>
         <div className="skills__wrap">

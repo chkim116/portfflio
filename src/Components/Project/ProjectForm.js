@@ -5,7 +5,7 @@ import { ProjectModal } from "./ProjectModal";
 
 const ProjectBlock = styled.div`
   max-width: 1440px;
-  margin: 3em auto;
+  margin: 0 auto;
   text-align: center;
   position: relative;
   .project__menu {
@@ -62,7 +62,8 @@ export const ProjectForm = () => {
   }, [title]);
 
   return (
-    <ProjectBlock className="Project">
+    <ProjectBlock>
+      <h1 className="portfoilo__title Project">My Project</h1>
       <div className="project__menu">
         <ProjectGrid show={show} onClick={onClick} />
       </div>

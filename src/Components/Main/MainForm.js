@@ -47,7 +47,7 @@ const MainBlock = styled.main`
       font-weight: bold;
       left: 5%;
       font-family: "NeoDunggeunmo";
-
+      opacity: ${(props) => props.textOpacity};
       .img__title {
         font-size: 20px;
         margin-bottom: 0.5em;
@@ -67,21 +67,10 @@ const MainBlock = styled.main`
   }
 `;
 
-export const MainForm = () => {
-  const [opacity, setOpacity] = useState(0.3);
-  document.addEventListener(
-    "scroll",
-    useCallback(() => {
-      const scrollY = window.scrollY;
-      const img = document.querySelector(".section__wrap-img");
-      const imgHeight = img.getBoundingClientRect().height;
-      setOpacity(0.3 + scrollY / imgHeight);
-    }, [])
-  );
-
+export const MainForm = ({ opacity, textOpacity }) => {
   return (
-    <MainBlock opacity={opacity}>
-      <section className="section Home">
+    <MainBlock opacity={opacity} textOpacity={textOpacity} className="Home">
+      <section className="section">
         <div className="section__wrap-img"></div>
         <img className="section__img" src={myimg1} alt="메인이미지"></img>
         <div className="section__img-text">

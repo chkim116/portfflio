@@ -72,9 +72,11 @@ const NavList = ({ navList, onClick }) => {
 export const Nav = () => {
   const navList = ["Home", "About", "Skills", "Project", "Contact"];
   const onClick = useCallback((e) => {
-    document
-      .querySelector(`.${e.target.dataset.ref}`)
-      .scrollIntoView({ behavior: "smooth", block: "nearest" });
+    const ref = e.target.dataset.ref;
+    document.querySelector(`.${ref}`).scrollIntoView({
+      behavior: "smooth",
+      block: ref === "Project" ? "start" : "center",
+    });
   }, []);
 
   const [bgColor, setBgColor] = useState("");

@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
+import { ProjectGrid } from "./ProjectGrid";
+import { ProjectModal } from "./ProjectModal";
 
 const ProjectBlock = styled.div`
   max-width: 1440px;
   margin: 3em auto;
   text-align: center;
-
+  position: relative;
   .project__menu {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -20,83 +22,51 @@ const ProjectBlock = styled.div`
   }
 `;
 
-const ProjectGridBlock = styled.div`
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  flex-direction: column;
-
-  .project__imgbox {
-    width: 100%;
-    position: relative;
-    padding: 50%;
-    .project__img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-  }
-
-  .project__more {
-    margin: 1em auto;
-    .projec__btn {
-      background: #30a9de;
-      cursor: pointer;
-      color: white;
-      font-weight: bold;
-      padding: 0.5em 1em;
-      border-radius: 12px;
-    }
-  }
-`;
-
-const ProjectGrid = () => {
-  return (
-    <ProjectGridBlock>
-      <h3 className="project__title">프로젝트</h3>
-      <div className="project__imgbox">
-        <img className="project__img" src="/" alt="프로젝트이미지" />
-      </div>
-      <div className="project__more">
-        <button className="projec__btn" type="button">
-          자세히 보기
-        </button>
-      </div>
-    </ProjectGridBlock>
-  );
-};
-
-const ProjectModal = () => {
-  return (
-    <div className="project__modal">
-      <div className="project__link">
-        <p>링크으응으</p>
-        <p>깃허브링크응</p>
-      </div>
-      <div className="project__modal-imgbox">
-        <img className="project__modal-img" src="/" alt="프로젝트상세이미지" />
-      </div>
-      <div className="project__stack">
-        <h4>사용 스택</h4>
-        <div>리액트, 노드, js</div>
-      </div>
-    </div>
-  );
-};
-
 export const ProjectForm = () => {
+  const [show, setShow] = useState(false);
+  const [title, setTitle] = useState(false);
+
+  const [project, setProject] = useState({
+    pageLink: "",
+    gitLink: "",
+    imgUrl: "",
+    stack: "",
+    desc: "",
+  });
+
+  const onClick = useCallback((e) => {
+    !show ? setShow(true) : setShow(false);
+    const title = e.target.dataset.title;
+    setTitle(title);
+  }, []);
+
+  const onClose = useCallback(() => {
+    setTitle("");
+    setShow(false);
+  }, []);
+
+  useEffect(() => {
+    if (!title) {
+      return setProject("");
+    }
+    console.log(title === "프로젝트3");
+    setProject({
+      ...project,
+      desc: title,
+      stack:
+        (title === "프로젝트" && "HTML, CSS") ||
+        (title === "프로젝트2" && "리액트, NODEJS") ||
+        (title === "프로젝트3" && "NEXTJS") ||
+        (title === "프로젝트4" && "VUEJS"),
+    });
+  }, [title]);
+
   return (
     <ProjectBlock className="Project">
       <div className="project__menu">
-        <ProjectGrid />
-        <ProjectGrid />
-        <ProjectGrid />
-        <ProjectGrid />
-        <ProjectGrid />
-        <ProjectGrid />
+        <ProjectGrid show={show} onClick={onClick} />
       </div>
+      <ProjectModal show={show} onClick={onClose} project={project} />
     </ProjectBlock>
   );
 };

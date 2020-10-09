@@ -31,19 +31,20 @@ const NavBlock = styled.nav`
 
   .wrap__img {
     display: flex;
+    height: 54px;
+    align-items: center;
     @media all and (max-width: 768px) {
       padding-left: 1em;
     }
     .nav__img {
       width: 35px;
       height: 35px;
-      margin: 1em;
+      margin: 0 1em;
       object-fit: cover;
       border-radius: 50%;
     }
 
     .nav__title {
-      line-height: 24px;
       @media all and (max-width: 768px) {
         display: none;
       }
@@ -73,7 +74,7 @@ export const Nav = () => {
   const onClick = useCallback((e) => {
     document
       .querySelector(`.${e.target.dataset.ref}`)
-      .scrollIntoView({ behavior: "smooth", block: "center" });
+      .scrollIntoView({ behavior: "smooth", block: "nearest" });
   }, []);
 
   const [bgColor, setBgColor] = useState("");

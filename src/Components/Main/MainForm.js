@@ -8,6 +8,7 @@ const MainBlock = styled.main`
   position: relative;
   top: 54px;
   padding-bottom: 36%;
+  min-height: 316px;
   @media all and (max-width: 768px) {
     padding-bottom: 56.25%;
   }

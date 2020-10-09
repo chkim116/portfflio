@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { AiFillGithub, AiOutlineInstagram } from "react-icons/ai";
-import Axios from "axios"
+import Axios from "axios";
 
 const ContactBlock = styled.div`
   width: 100%;
@@ -70,16 +70,20 @@ const ContactFormBlock = styled.form`
   .contact__form-input {
     width: 50%;
     padding: 0.6em;
-    border: 1px solid black;
+    border-radius: 12px;
     margin: 0.5em 0;
-
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    @media all and (max-width: 768px) {
+      width: 80%;
+    }
     &.btn {
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
       cursor: pointer;
       border-radius: 33px;
       font-weight: bold;
       border: none;
-      background: #b9dedf;
       &:hover {
+        background: #b9dedf;
         color: #ffffff;
       }
     }
@@ -87,6 +91,7 @@ const ContactFormBlock = styled.form`
     &.textarea {
       min-height: 250px;
       resize: none;
+      outline: none;
       @media all and (max-width: 768px) {
         min-height: 180px;
       }
@@ -103,7 +108,6 @@ export const ContactForm = () => {
     message: "",
   });
 
-
   const onChange = (e) => {
     const { name, value } = e.target;
     setSendMe({ ...sendMe, [name]: value });
@@ -114,7 +118,9 @@ export const ContactForm = () => {
     setLoading(true);
     const sendMail = async () => {
       try {
-        await Axios.post("https://beprt.herokuapp.com/mail", sendMe).then(() => alert("메일 전송이 성공적으로 이뤄졌습니다!"));
+        await Axios.post("https://beprt.herokuapp.com/mail", sendMe).then(() =>
+          alert("메일 전송이 성공적으로 이뤄졌습니다!")
+        );
       } catch (err) {
         console.log(err);
         alert("알 수 없는 오류 전송실패입니다.");
@@ -124,84 +130,82 @@ export const ContactForm = () => {
         tel: "",
         email: "",
         message: "",
-      })
-      setLoading(false)
+      });
+      setLoading(false);
     };
     sendMail();
   };
 
   return (
     <>
-      {loading && <div className="loading__box"></div>}
+      {loading && <div className='loading__box'></div>}
       <ContactBlock>
-        <h1 className="portfoilo__title">Contact Me</h1>
-        <div className="contact__form Contact">
-          <div className="contact__name">
+        <h1 className='portfoilo__title'>Contact Me</h1>
+        <div className='contact__form Contact'>
+          <div className='contact__name'>
             <table>
               <tbody>
                 <tr>
-                  <td>이메일</td>
+                  <td>EMAIL.</td>
                   <td>cskim132@gmail.com</td>
                 </tr>
                 <tr>
-                  <td>전화번호</td>
+                  <td>PHONE.</td>
                   <td>010-2629-9315</td>
                 </tr>
               </tbody>
             </table>
-            <div className="contact__icons">
-              <a href="https://instargram.com" target="blank">
+            <div className='contact__icons'>
+              <a href='https://instargram.com' target='blank'>
                 <AiOutlineInstagram
-                  className="contact__instar"
+                  className='contact__instar'
                   size={44}
-                  fill="pink"
+                  fill='pink'
                 />
               </a>
-              <a href="https://github.com/chkim116" target="blank">
+              <a href='https://github.com/chkim116' target='blank'>
                 <AiFillGithub
-                  className="contact__git"
+                  className='contact__git'
                   size={44}
-                  fill="purple"
+                  fill='purple'
                 />
               </a>
             </div>
           </div>
           <ContactFormBlock onChange={onChange} onSubmit={onSubmit}>
             <input
-              className="contact__form-input"
-              type="text"
+              className='contact__form-input'
+              type='text'
               required
-              placeholder="Name *"
-              name="username"
+              placeholder='Name *'
+              name='username'
               defaultValue={sendMe.username}
             />
             <input
-              className="contact__form-input"
-              type="email"
-              name="email"
-              placeholder="Email *"
+              className='contact__form-input'
+              type='email'
+              name='email'
+              placeholder='Email *'
               defaultValue={sendMe.email}
             />
             <input
-              className="contact__form-input"
-              type="tel"
-              name="tel"
-              placeholder="PhoneNumber"
+              className='contact__form-input'
+              type='tel'
+              name='tel'
+              placeholder='PhoneNumber'
               defaultValue={sendMe.tel}
             />
             <textarea
-              className="contact__form-input textarea"
-              type="text"
+              className='contact__form-input textarea'
+              type='text'
               required
-              name="message"
-              placeholder="Message *"
+              name='message'
+              placeholder='Message *'
               defaultValue={sendMe.message}
             />
-            <input
-              className="contact__form-input btn"
-              type="submit"
-              value="SEND ME"
-            />
+            <button className='contact__form-input btn' type='submit'>
+              SEND ME
+            </button>
           </ContactFormBlock>
         </div>
       </ContactBlock>

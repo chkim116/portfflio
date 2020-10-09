@@ -15,7 +15,7 @@ export const Footer = () => {
   return (
     <FooterBlock>
       <hr></hr>
-      <div>&copy; {year} Changhoe-Kim</div>
+      <h4>&copy; {year} Changhoe-Kim</h4>
     </FooterBlock>
   );
 };

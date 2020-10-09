@@ -7,7 +7,7 @@ const MainBlock = styled.main`
   background: #ffffff;
   position: relative;
   top: 54px;
-  padding-bottom: 36%;
+  padding-bottom: 50%;
   min-height: 316px;
   @media all and (max-width: 768px) {
     padding-bottom: 56.25%;
@@ -22,6 +22,7 @@ const MainBlock = styled.main`
     .section__wrap-img {
       background: #ffffff;
       position: absolute;
+      object-fit: cover;
       width: 100%;
       height: 100%;
       opacity: ${(props) => props.opacity};
@@ -69,13 +70,13 @@ const MainBlock = styled.main`
 
 export const MainForm = ({ opacity, textOpacity }) => {
   return (
-    <MainBlock opacity={opacity} textOpacity={textOpacity} className="Home">
-      <section className="section">
-        <div className="section__wrap-img"></div>
-        <img className="section__img" src={myimg1} alt="메인이미지"></img>
-        <div className="section__img-text">
-          <div className="img__title">I'm FrontEnd Developer</div>
-          <div className="img__desc">
+    <MainBlock opacity={opacity} textOpacity={textOpacity} className='Home'>
+      <section className='section'>
+        <div className='section__wrap-img'></div>
+        <img className='section__img' src={myimg1} alt='메인이미지'></img>
+        <div className='section__img-text'>
+          <div className='img__title'>I'm FrontEnd Developer</div>
+          <div className='img__desc'>
             매번 다른 세상을 향해 나아가고픈 신입 개발자입니다.
           </div>
         </div>

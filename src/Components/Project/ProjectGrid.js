@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import  ProjectImg from "../../assets/images/sample.jpg";
+import ProjectImg from "../../assets/images/sample.jpg";
 
 const ProjectGridBlock = styled.div`
   display: flex;
@@ -13,7 +13,7 @@ const ProjectGridBlock = styled.div`
     position: relative;
     padding-bottom: 56.25%;
     margin-top: 1em;
-    
+
     .project__img {
       position: absolute;
       top: 0;
@@ -25,15 +25,33 @@ const ProjectGridBlock = styled.div`
   }
 
   .project__more {
-    margin: 1em auto;
-
-    .projec__btn {
-      background: #30a9de;
-      cursor: pointer;
-      color: white;
-      font-weight: bold;
-      padding: 0.5em 1em;
-      border-radius: 12px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    opacity: 0;
+    background: rgba(253, 253, 253, 0.6);
+    transition: 500ms;
+    cursor: pointer;
+    overflow: hidden;
+    h3 {
+      transition: 500ms;
+      transform: translateY(-1000%);
+    }
+    h4 {
+      transition: 700ms;
+      transform: translateY(1000%);
+    }
+    &:hover {
+      opacity: 1;
+      h3 {
+        transform: translateY(460%);
+      }
+      h4 {
+        transform: translateY(540%);
+      }
     }
   }
 `;
@@ -50,19 +68,15 @@ export const ProjectGrid = ({ onClick }) => {
     <>
       {project.map((pj, index) => (
         <ProjectGridBlock key={index}>
-          <h3 className="project__title">{pj.title}</h3>
-          <div className="project__imgbox">
-            <img className="project__img" src={pj.img} alt="프로젝트이미지" />
-          </div>
-          <div className="project__more">
-            <button
-              className="projec__btn"
+          <div className='project__imgbox'>
+            <img className='project__img' src={pj.img} alt='프로젝트이미지' />
+            <div
+              className='project__more'
               data-title={pj.title}
-              type="button"
-              onClick={onClick}
-            >
-              자세히 보기
-            </button>
+              onClick={onClick}>
+              <h3>블로그 제작</h3>
+              <h4>oh yes</h4>
+            </div>
           </div>
         </ProjectGridBlock>
       ))}

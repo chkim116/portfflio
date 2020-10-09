@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 import { ProjectGrid } from "./ProjectGrid";
 import { ProjectModal } from "./ProjectModal";
-import  ProjectImg  from "../../assets/images/sample.jpg"
+import ProjectImg from "../../assets/images/sample.jpg";
 
 const ProjectBlock = styled.div`
   max-width: 1440px;
@@ -35,11 +35,14 @@ export const ProjectForm = () => {
     desc: "",
   });
 
-  const onClick = useCallback((e) => {
-    !show ? setShow(true) : setShow(false);
-    const title = e.target.dataset.title;
-    setTitle(title);
-  }, [show]);
+  const onClick = useCallback(
+    (e) => {
+      !show ? setShow(true) : setShow(false);
+      const title = e.target.dataset.title;
+      setTitle(title);
+    },
+    [show]
+  );
 
   const onClose = useCallback(() => {
     setTitle("");
@@ -52,8 +55,7 @@ export const ProjectForm = () => {
     } else {
       document.body.style.overflow = "scroll";
     }
-  }, [show])
-
+  }, [show]);
 
   useEffect(() => {
     if (!title) {
@@ -62,7 +64,8 @@ export const ProjectForm = () => {
     setProject({
       ...project,
       imgUrl: ProjectImg,
-      desc: title,
+      desc:
+        "Village did removed enjoyed explain nor ham saw calling talking. Securing as informed declared or margaret. Joy horrible moreover man feelings own shy. Request norland neither mistake for yet. Between the for morning assured country believe. On even feet time have an no at. Relation so in confined smallest children unpacked delicate. Why sir end believe uncivil respect. Always get adieus nature day course for common. My little garret repair to desire he esteem. ",
       stack:
         (title === "프로젝트" && "HTML, CSS") ||
         (title === "프로젝트2" && "리액트, NODEJS") ||
@@ -74,13 +77,13 @@ export const ProjectForm = () => {
 
   return (
     <>
-    <ProjectBlock>
-      <h1 className="portfoilo__title Project">My Project</h1>
-      <div className="project__menu">
-        <ProjectGrid show={show} onClick={onClick} />
-      </div>
-    </ProjectBlock>
+      <ProjectBlock>
+        <h1 className='portfoilo__title Project'>My Project</h1>
+        <div className='project__menu'>
+          <ProjectGrid show={show} onClick={onClick} />
+        </div>
+      </ProjectBlock>
       <ProjectModal show={show} onClick={onClose} project={project} />
-  </>
+    </>
   );
 };

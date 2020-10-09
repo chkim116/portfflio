@@ -11,6 +11,7 @@ body {
   margin: 0;
   color: #312e41;
   font-family: "NEXON Lv1 Gothic OTF";
+  overflow-y: scroll;
 }
 
 h1,

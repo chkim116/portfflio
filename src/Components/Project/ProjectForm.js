@@ -47,6 +47,13 @@ export const ProjectForm = () => {
   }, []);
 
   useEffect(() => {
+    if (show) {
+      document.body.style.overflow = "hidden";
+    }
+  }, [show])
+
+
+  useEffect(() => {
     if (!title) {
       return setProject("");
     }
@@ -64,12 +71,14 @@ export const ProjectForm = () => {
   }, [title]);
 
   return (
+    <>
     <ProjectBlock>
       <h1 className="portfoilo__title Project">My Project</h1>
       <div className="project__menu">
         <ProjectGrid show={show} onClick={onClick} />
       </div>
-      <ProjectModal show={show} onClick={onClose} project={project} />
     </ProjectBlock>
+      <ProjectModal show={show} onClick={onClose} project={project} />
+  </>
   );
 };

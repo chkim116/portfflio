@@ -45,10 +45,10 @@ app.post("/mail", async (req, res) => {
   const txt = {username, tel, email, message}
   try {
     await sendEmail(txt);
-    res.status(200).send("right");
+    res.status(200);
   } catch (err) {
-    res.status(400).send("wrong");
+    res.status(400);
   }
 });
 
-app.listen(4000, console.log("SERVER OPEN", "http://localhost:4000/"));
+app.listen(4000  , console.log("SERVER OPEN", "http://localhost:4000/"));

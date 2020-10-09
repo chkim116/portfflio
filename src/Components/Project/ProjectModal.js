@@ -26,7 +26,7 @@ const ProjectModalBlock = styled.div`
     transform: translate(-50%, -50%);
     @media all and (max-width: 768px) {
       width: 80%;
-      height: 80%;
+      height: 50%;
     }
 
     .project__modal {
@@ -45,11 +45,7 @@ const ProjectModalBlock = styled.div`
       &::-webkit-scrollbar {
         display: none;
       }
-      @media all and (max-width: 768px) {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
+
 
       .project__close {
         cursor: pointer;

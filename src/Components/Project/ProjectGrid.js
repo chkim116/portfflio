@@ -12,14 +12,15 @@ const ProjectGridBlock = styled.div`
     width: 100%;
     position: relative;
     padding-bottom: 56.25%;
-    margin: 0.3em;
-
+    margin-top: 1em;
+    
     .project__img {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+      padding: 0 0.3em;
     }
   }
 

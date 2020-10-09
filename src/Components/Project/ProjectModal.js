@@ -66,7 +66,7 @@ const ProjectModalBlock = styled.div`
         top: 0.7em;
         font-weight: bold;
         right: 5%;
-        position: absolute;
+        position: fixed;
         line-height: 40px;
         font-size: 2rem;
         width: 40px;

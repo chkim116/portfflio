@@ -1,17 +1,11 @@
 const express = require("express");
 const nodeMail = require("nodemailer");
 const bodyParser = require("body-parser");
-const dotenv = require('dotenv')
 
-dotenv.config()
 const app = express();
-
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}))
-const authUser = process.env.MAILID;
-const authPass = process.env.MAILIDPASS;
-
 const sendEmail = (txt) => {
   let transporter = nodeMail.createTransport({
     service: 'gmail',

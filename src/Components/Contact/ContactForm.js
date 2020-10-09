@@ -113,7 +113,7 @@ export const ContactForm = () => {
     setLoading(true);
     const sendMail = async () => {
       try {
-        await Axios.post("/mail", sendMe);
+        await Axios.post("/mail", sendMe).then(() => alert("메일 전송이 성공적으로 이뤄졌습니다!"));
       } catch (err) {
         console.log(err);
         alert("알 수 없는 오류 전송실패입니다.");
@@ -125,7 +125,7 @@ export const ContactForm = () => {
 
   return (
     <>
-      {loading && <div className="loading__title">전송 중입니다.</div>}
+      {loading && <div className="loading__box"></div>}
       <ContactBlock>
         <h1 className="portfoilo__title">Contact Me</h1>
         <div className="contact__form Contact">

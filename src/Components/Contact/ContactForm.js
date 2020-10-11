@@ -13,6 +13,7 @@ const ContactBlock = styled.div`
   .contact__form {
     display: flex;
     margin: 2em 0;
+
     @media all and (max-width: 768px) {
       flex-direction: column;
       margin: 1em;
@@ -34,6 +35,7 @@ const ContactBlock = styled.div`
     .contact__instar {
       cursor: pointer;
       margin-right: 0.4em;
+
       &:hover {
         transform: scale(1.2);
         transition: 500ms;
@@ -43,6 +45,7 @@ const ContactBlock = styled.div`
     .contact__git {
       cursor: pointer;
       margin-left: 0.4em;
+
       &:hover {
         transform: scale(1.2);
         transition: 500ms;
@@ -61,6 +64,7 @@ const ContactFormBlock = styled.form`
   border-left: 1px solid black;
   justify-content: center;
   align-items: center;
+
   @media all and (max-width: 768px) {
     border-top: 1px solid black;
     padding-top: 1em;
@@ -72,16 +76,20 @@ const ContactFormBlock = styled.form`
     padding: 0.6em;
     border-radius: 12px;
     margin: 0.5em 0;
+    border: 1px solid rgb(118, 118, 118);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
     @media all and (max-width: 768px) {
       width: 80%;
     }
+
     &.btn {
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
       cursor: pointer;
       border-radius: 33px;
       font-weight: bold;
       border: none;
+
       &:hover {
         background: #b9dedf;
         color: #ffffff;

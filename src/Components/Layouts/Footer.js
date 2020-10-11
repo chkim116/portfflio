@@ -7,6 +7,7 @@ const FooterBlock = styled.footer`
   width: 100%;
   text-align: center;
   padding: 4em;
+  border-top: 1px solid black;
 `;
 
 export const Footer = () => {
@@ -14,8 +15,7 @@ export const Footer = () => {
 
   return (
     <FooterBlock>
-      <hr></hr>
-      <h4>&copy; {year} Changhoe-Kim</h4>
+      <div>&copy; {year} Changhoe-Kim</div>
     </FooterBlock>
   );
 };

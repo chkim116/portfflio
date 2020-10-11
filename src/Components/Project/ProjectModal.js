@@ -18,7 +18,6 @@ const ProjectModalBlock = styled.div`
     background: rgba(0, 0, 0, 0.3);
     position: fixed;
     display: ${(props) => (!props.show ? "none" : "block")};
-
     top: 0;
     left: 0;
     right: 0;
@@ -38,6 +37,7 @@ const ProjectModalBlock = styled.div`
     height: 75%;
     z-index: 55;
     transform: translate(-50%, -50%);
+
     @media all and (max-width: 768px) {
       width: 80%;
       height: 50%;
@@ -71,6 +71,7 @@ const ProjectModalBlock = styled.div`
         font-size: 2rem;
         width: 40px;
         height: 40px;
+
         &:hover {
           background: rgba(0, 0, 0, 0.3);
           transition: 500ms;
@@ -82,12 +83,14 @@ const ProjectModalBlock = styled.div`
 
   .project__link {
     padding: 1em;
+
     .project__link-btn {
       margin: 1em 0.4em;
       padding: 0.5em 1em;
       transition: 500ms;
       cursor: pointer;
       font-weight: bold;
+
       &:hover {
         border-bottom: 1px solid black;
       }
@@ -100,6 +103,7 @@ const ProjectModalBlock = styled.div`
     width: 70%;
     top: 2em;
     margin: 0 auto 1.5em auto;
+
     .project__modal-img {
       width: 100%;
       height: 100%;
@@ -111,8 +115,16 @@ const ProjectModalBlock = styled.div`
 
   .project__stack {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    margin-bottom: 1.5em;
+
     .project__stack-title {
+      margin-right: 0.8em;
+    }
+
+    .project__stack-icons {
       margin-right: 0.8em;
     }
   }
@@ -123,6 +135,11 @@ const ProjectModalBlock = styled.div`
     flex-direction: column;
     margin: 0 auto;
     padding-bottom: 1em;
+    aling-items: center;
+
+    .project__desc-text {
+      margin-right: 0.8em;
+    }
   }
 `;
 
@@ -139,7 +156,7 @@ export const ProjectModal = ({ show, onClick, project }) => {
             <div className='project__modal-imgbox'>
               <img
                 className='project__modal-img'
-                src={project.imgUrl}
+                src={project.img}
                 alt='프로젝트상세이미지'
               />
             </div>
@@ -152,13 +169,11 @@ export const ProjectModal = ({ show, onClick, project }) => {
               </a>
             </div>
             <div className='project__stack'>
-              <h4 className='project__stack-title'>STACK:</h4>
-              <h4>{project.stack}</h4>
+              <div className='project__stack-title'>STACK</div>
+              <div className='project__stack-icons'>{project.stack}</div>
             </div>
-            <br></br>
-            <h4>주요 기능</h4>
             <div className='project__desc'>
-              <p>{project.desc}</p>
+              <div className='project__desc-text'>{project.desc}</div>
             </div>
           </div>
         </div>

@@ -12,6 +12,7 @@ body {
   color: #333333;
   font-family: "NEXON Lv2 Gothic";
   overflow-y: scroll;
+  font-weight: bold;
   background: #fdfdfd;
 }
 
@@ -44,6 +45,7 @@ h1 {
 }
 
 a {
+  text-decoration: none;
   color: #000000;
 }
 

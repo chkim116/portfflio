@@ -36,6 +36,7 @@ const NavBlock = styled.nav`
       height: 350px;
       align-items: center;
       text-align: center;
+
       .nav__items-list {
         margin: 0.4em 0.6em;
       }
@@ -43,6 +44,7 @@ const NavBlock = styled.nav`
     .nav__items-list {
       padding: 1em;
       cursor: pointer;
+
       &:hover {
         background: #b9dedf;
         border-radius: 12px;
@@ -124,7 +126,7 @@ export const Nav = () => {
     <NavBlock bgColor={bgColor} show={show} onClick={onClose}>
       <div className='wrap__img'>
         <img className='nav__img' src={profile} alt='로고이미지' />
-        <h4 className='nav__title'> 김창회의 포트폴리오</h4>
+        <div className='nav__title'> 김창회의 포트폴리오</div>
       </div>
       <NavList navList={navList} onClick={onClick} />
       <GiHamburgerMenu className='media__nav' onClick={onNav} size={24} />

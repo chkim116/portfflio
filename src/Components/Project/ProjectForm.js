@@ -9,13 +9,16 @@ const ProjectBlock = styled.div`
   margin: 0 auto;
   text-align: center;
   position: relative;
+
   .project__menu {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0.5em;
+
     @media all and (max-width: 768px) {
       grid-template-columns: repeat(2, 1fr);
     }
+
     @media all and (max-width: 540px) {
       grid-template-columns: repeat(1, 0.8fr);
       justify-content: center;
@@ -25,27 +28,37 @@ const ProjectBlock = styled.div`
 
 export const ProjectForm = () => {
   const [show, setShow] = useState(false);
-  const [title, setTitle] = useState(false);
-
-  const [project, setProject] = useState({
-    pageLink: "",
-    gitLink: "",
-    imgUrl: ProjectImg,
-    stack: "",
-    desc: "",
-  });
+  const [project, setProject] = useState({});
 
   const onClick = useCallback(
     (e) => {
-      !show ? setShow(true) : setShow(false);
       const title = e.target.dataset.title;
-      setTitle(title);
+      if (!title) {
+        return;
+      }
+      title === "project1" &&
+        setProject({
+          img: ProjectImg,
+          stack: "react",
+          desc:
+            "const title = e.target.dataset.title;const title = e.target.dataset.title;const title = e.target.dataset.title;const title = e.target.dataset.title;const title = e.target.dataset.title;",
+        });
+      title === "project2" &&
+        setProject({ img: ProjectImg, stack: "reactss", desc: "d" });
+      title === "project3" &&
+        setProject({ img: ProjectImg, stack: "project33", desc: "d" });
+      title === "project4" &&
+        setProject({ img: ProjectImg, stack: "project34", desc: "d" });
+      title === "project5" &&
+        setProject({ img: ProjectImg, stack: "project35", desc: "d" });
+      title === "project6" &&
+        setProject({ img: ProjectImg, stack: "project36", desc: "d" });
+      setShow(true);
     },
     [show]
   );
 
   const onClose = useCallback(() => {
-    setTitle("");
     setShow(false);
   }, []);
 
@@ -56,24 +69,6 @@ export const ProjectForm = () => {
       document.body.style.overflow = "scroll";
     }
   }, [show]);
-
-  useEffect(() => {
-    if (!title) {
-      return setProject("");
-    }
-    setProject({
-      ...project,
-      imgUrl: ProjectImg,
-      desc:
-        "Village did removed enjoyed explain nor ham saw calling talking. Securing as informed declared or margaret. Joy horrible moreover man feelings own shy. Request norland neither mistake for yet. Between the for morning assured country believe. On even feet time have an no at. Relation so in confined smallest children unpacked delicate. Why sir end believe uncivil respect. Always get adieus nature day course for common. My little garret repair to desire he esteem. ",
-      stack:
-        (title === "프로젝트" && "HTML, CSS") ||
-        (title === "프로젝트2" && "리액트, NODEJS") ||
-        (title === "프로젝트3" && "NEXTJS") ||
-        (title === "프로젝트4" && "VUEJS"),
-    });
-    // eslint-disable-next-line
-  }, [title]);
 
   return (
     <>

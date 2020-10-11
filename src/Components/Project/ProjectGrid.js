@@ -36,21 +36,29 @@ const ProjectGridBlock = styled.div`
     transition: 500ms;
     cursor: pointer;
     overflow: hidden;
-    h3 {
+
+    .project__more-title {
+      font-size: 1.2rem;
+      font-weight: bold;
       transition: 500ms;
       transform: translateY(-1000%);
     }
-    h4 {
+
+    .project__more-desc {
       transition: 700ms;
+      font-weight: bold;
       transform: translateY(1000%);
     }
+
     &:hover {
       opacity: 1;
-      h3 {
-        transform: translateY(460%);
+
+      .project__more-title {
+        transform: translateY(350%);
       }
-      h4 {
-        transform: translateY(540%);
+
+      .project__more-desc {
+        transform: translateY(400%);
       }
     }
   }
@@ -58,12 +66,31 @@ const ProjectGridBlock = styled.div`
 
 export const ProjectGrid = ({ onClick }) => {
   const project = [
-    { title: "프로젝트", img: ProjectImg },
-    { title: "프로젝트2", img: ProjectImg },
-    { title: "프로젝트3", img: ProjectImg },
-    { title: "프로젝트4", img: ProjectImg },
+    {
+      title: "project1",
+      img: ProjectImg,
+    },
+    {
+      title: "project2",
+      img: ProjectImg,
+    },
+    {
+      title: "project3",
+      img: ProjectImg,
+    },
+    {
+      title: "project4",
+      img: ProjectImg,
+    },
+    {
+      title: "project5",
+      img: ProjectImg,
+    },
+    {
+      title: "project6",
+      img: ProjectImg,
+    },
   ];
-
   return (
     <>
       {project.map((pj, index) => (
@@ -74,8 +101,8 @@ export const ProjectGrid = ({ onClick }) => {
               className='project__more'
               data-title={pj.title}
               onClick={onClick}>
-              <h3>블로그 제작</h3>
-              <h4>oh yes</h4>
+              <div className='project__more-title'>블로그 제작</div>
+              <div className='project__more-desc'>oh yes</div>
             </div>
           </div>
         </ProjectGridBlock>

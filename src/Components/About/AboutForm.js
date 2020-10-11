@@ -99,7 +99,6 @@ export const AboutForm = () => {
             </div>
           </div>
 
-          <br />
           <div className='about__profile-desc'>
             <table>
               <tbody>
@@ -113,7 +112,7 @@ export const AboutForm = () => {
                 </tr>
                 <tr>
                   <td>Education</td>
-                  <td>백석대학교 사회복지학부</td>
+                  <td>백석대학교</td>
                 </tr>
               </tbody>
             </table>
@@ -121,11 +120,10 @@ export const AboutForm = () => {
         </div>
 
         <div className='about__career'>
-          <h3>활동 사항 및 경력</h3>
-          <br></br>
+          <div>활동 사항 및 경력</div>
           <div>
             <table>
-              <h3 className='about__career-title'>활동 사항</h3>
+              <div className='about__career-title'>활동 사항</div>
               <tbody>
                 <tr>
                   <td className='about__career-desc'>
@@ -138,7 +136,7 @@ export const AboutForm = () => {
                   </td>
                 </tr>
               </tbody>
-              <h3 className='about__career-title'>경력</h3>
+              <div className='about__career-title'>경력</div>
               <tbody>
                 <tr>
                   <td className='about__career-desc'>분당정자청소년수련관</td>

@@ -9,6 +9,7 @@ const MainBlock = styled.main`
   top: 54px;
   padding-bottom: 50%;
   min-height: 316px;
+
   @media all and (max-width: 768px) {
     padding-bottom: 56.25%;
   }
@@ -49,9 +50,11 @@ const MainBlock = styled.main`
       left: 5%;
       font-family: "NeoDunggeunmo";
       opacity: ${(props) => props.textOpacity};
+
       .img__title {
         font-size: 20px;
         margin-bottom: 0.5em;
+
         @media all and (max-width: 768px) {
           font-size: 16px;
         }

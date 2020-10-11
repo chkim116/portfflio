@@ -27,6 +27,7 @@ const SkillsBlock = styled.div`
   display: flex;
   position: relative;
   justify-content: center;
+
   @media all and (max-width: 768px) {
     flex-direction: column;
   }
@@ -42,9 +43,11 @@ const SkillsBlock = styled.div`
     width: 33%;
     padding: 1em;
     display: flex;
+
     &:nth-child(2),
     &:nth-child(3) {
       border-right: 1px solid black;
+
       @media all and (max-width: 768px) {
         border: none;
       }
@@ -67,10 +70,6 @@ const SkillsBlock = styled.div`
     flex-direction: column;
     padding: 1em;
     position: relative;
-    h3 {
-      margin: 1em 0;
-      cursor: help;
-    }
 
     @media all and (max-width: 768px) {
       padding: 0.5em;
@@ -82,6 +81,7 @@ const SkillsBlock = styled.div`
     width: 100%;
     margin: 0.3em;
     position: relative;
+
     .skills-desc {
       line-height: 42px;
       margin-left: 5px;
@@ -89,28 +89,34 @@ const SkillsBlock = styled.div`
     }
   }
 
-  [data-tooltip]:hover {
-    position: relative;
-  }
+  [data-tooltip] {
+    font-weight: bold;
+    margin-bottom: 1.5em;
+    cursor: help;
 
-  [data-tooltip]:after {
-    content: attr(data-tooltip);
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #ffffff;
-    font-size: 12px;
-    z-index: 9999;
-    opacity: 0;
-    left: -9999px;
-    transition: opacity 500ms;
-  }
+    &:hover {
+      position: relative;
+    }
 
-  [data-tooltip]:hover:after {
-    opacity: 1;
-    bottom: 100%;
-    padding: 1em;
-    width: 240px;
-    left: -100%;
+    &:after {
+      content: attr(data-tooltip);
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #ffffff;
+      font-size: 12px;
+      z-index: 9999;
+      opacity: 0;
+      left: -9999px;
+      transition: opacity 500ms;
+    }
+
+    &:hover:after {
+      opacity: 1;
+      bottom: 100%;
+      padding: 1em;
+      width: 240px;
+      left: -130%;
+    }
   }
 `;
 
@@ -122,9 +128,7 @@ export const SkillsForm = () => {
         <div className='skills-bg'></div>
         <div className='skills__wrap'>
           <div className='skills__work'>
-            <h3 data-tooltip='프로젝트에 활용했었으며 사용 가능합니다.'>
-              Awesome
-            </h3>
+            <div data-tooltip='프로젝트에 사용 가능합니다.'>Awesome</div>
             <div className='skills__work-desc'>
               <SiHtml5 size={42} fill='#E44F26' />
               <div className='skills-desc'>HTML5</div>
@@ -158,7 +162,7 @@ export const SkillsForm = () => {
         </div>
         <div className='skills__wrap'>
           <div className='skills__work'>
-            <h3 data-tooltip='미숙하나 사용해봤습니다.'>Amature</h3>
+            <div data-tooltip='미숙하나 사용해봤습니다.'>Amature</div>
             <div className='skills__work-desc'>
               <SiRedux size={42} fill='#8966C0' />
               <span className='skills-desc'>REDUX</span>
@@ -184,7 +188,7 @@ export const SkillsForm = () => {
 
         <div className='skills__wrap'>
           <div className='skills__work'>
-            <h3 data-tooltip='배우고 있거나, 싶은 스킬입니다.'>Beginner</h3>
+            <div data-tooltip='배우고 있거나, 싶은 스킬입니다.'>Beginner</div>
             <div className='skills__work-desc'>
               <SiTypescript size={42} fill='#73AACE' />
               <span className='skills-desc'>TYPESCRIPT</span>

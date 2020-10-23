@@ -132,14 +132,15 @@ export const ContactForm = () => {
       } catch (err) {
         console.log(err);
         alert("알 수 없는 오류 전송실패입니다.");
+      } finally {
+        setSendMe({
+          username: "",
+          tel: "",
+          email: "",
+          message: "",
+        });
+        setLoading(false);
       }
-      setSendMe({
-        username: "",
-        tel: "",
-        email: "",
-        message: "",
-      });
-      setLoading(false);
     };
     sendMail();
   };

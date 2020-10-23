@@ -85,7 +85,6 @@ const ProjectModalBlock = styled.div`
     padding: 1em;
 
     .project__link-btn {
-      margin: 1em 0.4em;
       padding: 0.5em 1em;
       transition: 500ms;
       cursor: pointer;
@@ -119,14 +118,6 @@ const ProjectModalBlock = styled.div`
     align-items: center;
     justify-content: center;
     margin-bottom: 1.5em;
-
-    .project__stack-title {
-      margin-right: 0.8em;
-    }
-
-    .project__stack-icons {
-      margin-right: 0.8em;
-    }
   }
 
   .project__desc {
@@ -136,10 +127,6 @@ const ProjectModalBlock = styled.div`
     margin: 0 auto;
     padding-bottom: 1em;
     aling-items: center;
-
-    .project__desc-text {
-      margin-right: 0.8em;
-    }
   }
 `;
 

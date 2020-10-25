@@ -39,26 +39,15 @@ const ProjectGridBlock = styled.div`
 
     .project__more-title {
       font-size: 1.2rem;
-      font-weight: bold;
       transition: 500ms;
       transform: translateY(-1000%);
-    }
-
-    .project__more-desc {
-      transition: 700ms;
-      font-weight: bold;
-      transform: translateY(1000%);
     }
 
     &:hover {
       opacity: 1;
 
       .project__more-title {
-        transform: translateY(350%);
-      }
-
-      .project__more-desc {
-        transform: translateY(400%);
+        transform: translateY(80%);
       }
     }
   }
@@ -102,7 +91,6 @@ export const ProjectGrid = ({ onClick }) => {
               data-title={pj.title}
               onClick={onClick}>
               <div className='project__more-title'>블로그 제작</div>
-              <div className='project__more-desc'>oh yes</div>
             </div>
           </div>
         </ProjectGridBlock>

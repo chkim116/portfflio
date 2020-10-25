@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Colors from "../../Style/Color";
 
 const ProjectModalBlock = styled.div`
   position: fixed;
@@ -50,10 +49,11 @@ const ProjectModalBlock = styled.div`
       right: 0;
       bottom: 0;
       max-width: 100%;
-      background: ${Colors.white};
       min-height: 100%;
       text-align: center;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      background: #fdfdfd;
+      border-radius: 12px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
       z-index: 55;
       overflow: scroll;
       scrollbar-width: none;
@@ -64,7 +64,6 @@ const ProjectModalBlock = styled.div`
       .project__close {
         cursor: pointer;
         top: 0.7em;
-        font-weight: bold;
         right: 5%;
         position: fixed;
         line-height: 40px;
@@ -88,7 +87,6 @@ const ProjectModalBlock = styled.div`
       padding: 0.5em 1em;
       transition: 500ms;
       cursor: pointer;
-      font-weight: bold;
 
       &:hover {
         border-bottom: 1px solid black;

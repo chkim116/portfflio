@@ -5,21 +5,17 @@ import { ProjectModal } from "./ProjectModal";
 import ProjectImg from "../../assets/images/sample.jpg";
 
 const ProjectBlock = styled.div`
-  max-width: 1440px;
+  max-width: 1000px;
   margin: 0 auto;
   text-align: center;
   position: relative;
 
   .project__menu {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 0.5em;
 
     @media all and (max-width: 768px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media all and (max-width: 540px) {
       grid-template-columns: repeat(1, 0.8fr);
       justify-content: center;
     }

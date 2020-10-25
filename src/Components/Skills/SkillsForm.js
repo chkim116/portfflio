@@ -85,7 +85,6 @@ const SkillsBlock = styled.div`
     .skills-desc {
       line-height: 42px;
       margin-left: 5px;
-      font-weight: bold;
     }
   }
 

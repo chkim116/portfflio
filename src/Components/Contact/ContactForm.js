@@ -76,23 +76,22 @@ const ContactFormBlock = styled.form`
     padding: 0.6em;
     border-radius: 12px;
     margin: 0.5em 0;
-    border: 1px solid rgb(118, 118, 118);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 2px 4px 0 hsla(0, 0%, 0%, 0.08);
 
     @media all and (max-width: 768px) {
       width: 80%;
     }
 
     &.btn {
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      box-shadow: inset 0 2px 4px 0 hsla(0, 0%, 0%, 0.08);
+      border: none;
       cursor: pointer;
       border-radius: 33px;
       font-weight: bold;
-      border: none;
 
       &:hover {
-        background: #b9dedf;
-        color: #ffffff;
+        color: rgba(0, 0, 0, 0.2);
       }
     }
 
@@ -126,19 +125,18 @@ export const ContactForm = () => {
     setLoading(true);
     const sendMail = async () => {
       try {
-        await Axios.post("https://beprt.herokuapp.com/mail", sendMe).then(() =>
-          alert("메일 전송이 성공적으로 이뤄졌습니다!")
-        );
-      } catch (err) {
-        console.log(err);
-        alert("알 수 없는 오류 전송실패입니다.");
-      } finally {
+        await Axios.post("https://beprt.herokuapp.com/mail", sendMe);
+        alert("메일 전송이 성공적으로 이뤄졌습니다!");
         setSendMe({
           username: "",
           tel: "",
           email: "",
           message: "",
         });
+        setLoading(false);
+      } catch (err) {
+        console.log(err);
+        alert("알 수 없는 오류 전송실패입니다.");
         setLoading(false);
       }
     };

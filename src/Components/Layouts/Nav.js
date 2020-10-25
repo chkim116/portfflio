@@ -13,7 +13,11 @@ const NavBlock = styled.nav`
   justify-content: space-around;
   background: ${(props) => props.bgColor};
   transition: background 500ms;
-  font-weight: bold;
+
+  @media all and (max-width: 768px) {
+    justify-content: space-between;
+    padding: 0 1em;
+  }
 
   .media__nav {
     display: none;
@@ -25,6 +29,7 @@ const NavBlock = styled.nav`
 
   .nav__items {
     display: flex;
+    font-size: 14px;
 
     @media all and (max-width: 768px) {
       position: fixed;
@@ -34,6 +39,7 @@ const NavBlock = styled.nav`
       width: 100%;
       top: 54px;
       height: 350px;
+      left: 0;
       align-items: center;
       text-align: center;
 
@@ -57,6 +63,10 @@ const NavBlock = styled.nav`
     height: 54px;
     align-items: center;
 
+    .nav__title {
+      font-size: 20px;
+      margin-left: 0.5 em;
+    }
     .nav__img {
       width: 35px;
       height: 35px;
@@ -126,7 +136,7 @@ export const Nav = () => {
     <NavBlock bgColor={bgColor} show={show} onClick={onClose}>
       <div className='wrap__img'>
         <img className='nav__img' src={profile} alt='로고이미지' />
-        <div className='nav__title'> 김창회의 포트폴리오</div>
+        <div className='nav__title'>Portfolio</div>
       </div>
       <NavList navList={navList} onClick={onClick} />
       <GiHamburgerMenu className='media__nav' onClick={onNav} size={24} />

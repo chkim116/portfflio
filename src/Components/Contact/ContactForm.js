@@ -123,24 +123,18 @@ export const ContactForm = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    const sendMail = async () => {
-      try {
-        await Axios.post("https://beprt.herokuapp.com/mail", sendMe);
-        alert("메일 전송이 성공적으로 이뤄졌습니다!");
-        setSendMe({
-          username: "",
-          tel: "",
-          email: "",
-          message: "",
-        });
-        setLoading(false);
-      } catch (err) {
-        console.log(err);
-        alert("알 수 없는 오류 전송실패입니다.");
-        setLoading(false);
-      }
+    const sendMail = () => {
+      Axios.post("https://beprt.herokuapp.com/mail", sendMe);
+      setLoading(false);
+      alert("메일 전송이 성공적으로 이뤄졌습니다!");
     };
     sendMail();
+    setSendMe({
+      username: "",
+      tel: "",
+      email: "",
+      message: "",
+    });
   };
 
   return (
@@ -186,21 +180,21 @@ export const ContactForm = () => {
               required
               placeholder='Name *'
               name='username'
-              defaultValue={sendMe.username}
+              value={sendMe.username}
             />
             <input
               className='contact__form-input'
               type='email'
               name='email'
               placeholder='Email *'
-              defaultValue={sendMe.email}
+              value={sendMe.email}
             />
             <input
               className='contact__form-input'
               type='tel'
               name='tel'
               placeholder='PhoneNumber'
-              defaultValue={sendMe.tel}
+              value={sendMe.tel}
             />
             <textarea
               className='contact__form-input textarea'
@@ -208,7 +202,7 @@ export const ContactForm = () => {
               required
               name='message'
               placeholder='Message *'
-              defaultValue={sendMe.message}
+              value={sendMe.message}
             />
             <button className='contact__form-input btn' type='submit'>
               SEND ME

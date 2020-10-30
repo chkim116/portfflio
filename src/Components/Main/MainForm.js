@@ -11,15 +11,17 @@ const MainBlock = styled.main`
   min-height: 316px;
 
   @media all and (max-width: 768px) {
-    padding-bottom: 56.25%;
+    padding-bottom: 50%;
   }
 
   .section {
     position: absolute;
     width: 100%;
     height: 100%;
+    max-width: 1920px;
     top: 0;
-
+    left: 50%;
+    transform: translateX(-50%);
     .section__wrap-img {
       background: #ffffff;
       position: absolute;

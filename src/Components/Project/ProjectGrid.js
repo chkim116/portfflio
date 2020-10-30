@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import ProjectImg from "../../assets/images/sample.jpg";
+import blogImg from "../../assets/images/마이블로그메인.png";
+import jeogiImg from "../../assets/images/저기어때.png";
+import startImg from "../../assets/images/스타트페이지.png";
 
 const ProjectGridBlock = styled.div`
   display: flex;
@@ -32,11 +34,11 @@ const ProjectGridBlock = styled.div`
     height: 100%;
     z-index: 2;
     opacity: 0;
-    background: rgba(253, 253, 253, 0.6);
+    background: rgba(0, 0, 0, 0.6);
     transition: 500ms;
     cursor: pointer;
     overflow: hidden;
-
+    color: #fdfdfd;
     .project__more-title {
       font-size: 1.2rem;
       transition: 500ms;
@@ -56,28 +58,16 @@ const ProjectGridBlock = styled.div`
 export const ProjectGrid = ({ onClick }) => {
   const project = [
     {
-      title: "project1",
-      img: ProjectImg,
+      title: "My Blog",
+      img: blogImg,
     },
     {
-      title: "project2",
-      img: ProjectImg,
+      title: "스타트페이지",
+      img: startImg,
     },
     {
-      title: "project3",
-      img: ProjectImg,
-    },
-    {
-      title: "project4",
-      img: ProjectImg,
-    },
-    {
-      title: "project5",
-      img: ProjectImg,
-    },
-    {
-      title: "project6",
-      img: ProjectImg,
+      title: "저기어때",
+      img: jeogiImg,
     },
   ];
   return (
@@ -90,7 +80,7 @@ export const ProjectGrid = ({ onClick }) => {
               className='project__more'
               data-title={pj.title}
               onClick={onClick}>
-              <div className='project__more-title'>블로그 제작</div>
+              <div className='project__more-title'>{pj.title}</div>
             </div>
           </div>
         </ProjectGridBlock>

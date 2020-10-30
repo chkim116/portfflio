@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Slider from "react-slick";
 
 const ProjectModalBlock = styled.div`
   position: fixed;
@@ -28,9 +29,8 @@ const ProjectModalBlock = styled.div`
     position: relative;
     top: 50%;
     left: 50%;
-    max-width: 1920px;
+    max-width: 1000px;
     height: auto;
-    max-height: 1024px;
     display: flex;
     width: 75%;
     height: 75%;
@@ -39,7 +39,7 @@ const ProjectModalBlock = styled.div`
 
     @media all and (max-width: 768px) {
       width: 80%;
-      height: 50%;
+      height: 55%;
     }
 
     .project__modal {
@@ -48,6 +48,7 @@ const ProjectModalBlock = styled.div`
       left: 0;
       right: 0;
       bottom: 0;
+      font-size: 14px;
       max-width: 100%;
       min-height: 100%;
       text-align: center;
@@ -61,15 +62,41 @@ const ProjectModalBlock = styled.div`
         display: none;
       }
 
+      .slick-prev {
+        left: 5px;
+        top: 50%;
+        z-index: 10;
+
+        &::before {
+          color: #dbdbdb;
+          font-size: 1.8rem;
+          font-weight: bold;
+        }
+      }
+      .slick-next {
+        right: 15px;
+        top: 50%;
+        z-index: 10;
+        &::before {
+          color: #dbdbdb;
+          font-size: 1.8rem;
+          font-weight: bold;
+        }
+      }
+
+      @media all and (max-width: 480px) {
+        font-size: 12px;
+      }
+
       .project__close {
         cursor: pointer;
-        top: 0.7em;
-        right: 5%;
+        top: 3px;
+        right: 2%;
         position: fixed;
-        line-height: 40px;
-        font-size: 2rem;
-        width: 40px;
-        height: 40px;
+        z-index: 33;
+        line-height: 30px;
+        width: 30px;
+        height: 30px;
 
         &:hover {
           background: rgba(0, 0, 0, 0.3);
@@ -82,6 +109,7 @@ const ProjectModalBlock = styled.div`
 
   .project__link {
     padding: 1em;
+    font-size: 14px;
 
     .project__link-btn {
       padding: 0.5em 1em;
@@ -96,17 +124,13 @@ const ProjectModalBlock = styled.div`
 
   .project__modal-imgbox {
     position: relative;
-    padding-bottom: 35%;
-    width: 70%;
+    width: 80%;
     top: 2em;
     margin: 0 auto 1.5em auto;
 
     .project__modal-img {
       width: 100%;
       height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
     }
   }
 
@@ -119,7 +143,7 @@ const ProjectModalBlock = styled.div`
   }
 
   .project__desc {
-    width: 50%;
+    width: 80%;
     z-index: 56;
     flex-direction: column;
     margin: 0 auto;
@@ -129,6 +153,14 @@ const ProjectModalBlock = styled.div`
 `;
 
 export const ProjectModal = ({ show, onClick, project }) => {
+  const settings = {
+    autoplay: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   return (
     <>
       <ProjectModalBlock show={show}>
@@ -138,27 +170,44 @@ export const ProjectModal = ({ show, onClick, project }) => {
             <span className='project__close' onClick={onClick}>
               X
             </span>
-            <div className='project__modal-imgbox'>
-              <img
-                className='project__modal-img'
-                src={project.img}
-                alt='프로젝트상세이미지'
-              />
-            </div>
+            {project.img && (
+              <Slider {...settings}>
+                {project.img.map((img, index) => (
+                  <div key={index} className='project__modal-imgbox'>
+                    <img
+                      className='project__modal-img'
+                      src={img}
+                      alt='프로젝트상세이미지'
+                    />
+                  </div>
+                ))}
+              </Slider>
+            )}
             <div className='project__link'>
-              <a href={project.pageLink} className='project__link-btn'>
+              <a
+                href={project.pageLink}
+                target='blank'
+                className='project__link-btn'>
                 Go Page
               </a>
-              <a href={project.gitLink} className='project__link-btn'>
+              <a
+                href={project.gitLink}
+                target='blank'
+                className='project__link-btn'>
                 Go Github
               </a>
             </div>
             <div className='project__stack'>
-              <div className='project__stack-title'>STACK</div>
+              <div className='project__stack-title'>STACK: </div>
               <div className='project__stack-icons'>{project.stack}</div>
             </div>
             <div className='project__desc'>
-              <div className='project__desc-text'>{project.desc}</div>
+              <div className='project__desc-text'>
+                {project.desc &&
+                  project.desc.map((text, index) => (
+                    <li key={index}>{text}</li>
+                  ))}
+              </div>
             </div>
           </div>
         </div>

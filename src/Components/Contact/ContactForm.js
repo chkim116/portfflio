@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { AiFillGithub, AiOutlineInstagram } from "react-icons/ai";
+import { SiBloglovin } from "react-icons/si";
 import Axios from "axios";
 
 const ContactBlock = styled.div`
@@ -32,19 +33,9 @@ const ContactBlock = styled.div`
     display: flex;
     padding: 1em;
 
-    .contact__instar {
+    .contact {
       cursor: pointer;
       margin-right: 0.4em;
-
-      &:hover {
-        transform: scale(1.2);
-        transition: 500ms;
-      }
-    }
-
-    .contact__git {
-      cursor: pointer;
-      margin-left: 0.4em;
 
       &:hover {
         transform: scale(1.2);
@@ -158,18 +149,14 @@ export const ContactForm = () => {
             </table>
             <div className='contact__icons'>
               <a href='https://instargram.com' target='blank'>
-                <AiOutlineInstagram
-                  className='contact__instar'
-                  size={44}
-                  fill='pink'
-                />
+                <AiOutlineInstagram className='contact' size={44} fill='pink' />
               </a>
               <a href='https://github.com/chkim116' target='blank'>
-                <AiFillGithub
-                  className='contact__git'
-                  size={44}
-                  fill='purple'
-                />
+                <AiFillGithub className='contact' size={44} fill='purple' />
+              </a>
+
+              <a href='https://kormelon.cf' target='blank'>
+                <SiBloglovin className='contact' size={44} fill='green' />
               </a>
             </div>
           </div>

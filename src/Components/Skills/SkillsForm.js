@@ -6,14 +6,12 @@ import {
   SiCss3,
   SiJavascript,
   SiReact,
-  SiStyledComponents,
   SiTypescript,
   SiNextDotJs,
-  SiPython,
   SiWebpack,
   SiMongodb,
 } from "react-icons/si";
-import { FaAws, FaNodeJs, FaSass } from "react-icons/fa";
+import { FaAws, FaNodeJs } from "react-icons/fa";
 
 const WrapSkill = styled.div`
   max-width: 1440px;
@@ -145,27 +143,19 @@ export const SkillsForm = () => {
               <span className='skills-desc'>REACT</span>
             </div>
             <div className='skills__work-desc'>
+              <SiRedux size={42} fill='#8966C0' />
+              <span className='skills-desc'>REDUX</span>
+            </div>
+            <div className='skills__work-desc'>
               <FaNodeJs size={42} fill='#9EC879' />
               <span className='skills-desc'>NODEJS</span>
-            </div>
-            <div className='skills__work-desc'>
-              <FaSass size={42} fill='#CF649A' />
-              <span className='skills-desc'>SASS</span>
-            </div>
-
-            <div className='skills__work-desc'>
-              <SiStyledComponents size={42} fill='#A06940' />
-              <span className='skills-desc'>STYLEDCOMPONENTS</span>
             </div>
           </div>
         </div>
         <div className='skills__wrap'>
           <div className='skills__work'>
             <div data-tooltip='미숙하나 사용해봤습니다.'>Amature</div>
-            <div className='skills__work-desc'>
-              <SiRedux size={42} fill='#8966C0' />
-              <span className='skills-desc'>REDUX</span>
-            </div>
+
             <div className='skills__work-desc'>
               <SiNextDotJs size={42} fill='#000000' />
               <span className='skills-desc'>NEXTJS</span>
@@ -187,15 +177,12 @@ export const SkillsForm = () => {
 
         <div className='skills__wrap'>
           <div className='skills__work'>
-            <div data-tooltip='배우고 있거나, 싶은 스킬입니다.'>Beginner</div>
+            <div data-tooltip='배우고 있는 스킬입니다.'>Beginner</div>
             <div className='skills__work-desc'>
               <SiTypescript size={42} fill='#73AACE' />
               <span className='skills-desc'>TYPESCRIPT</span>
             </div>
-            <div className='skills__work-desc'>
-              <SiPython size={42} fill='#3C6E9C' />
-              <span className='skills-desc'>PYTHON</span>
-            </div>
+
             <div className='skills__work-desc'>
               <SiReact size={42} fill='#08D9FF' />
               <span className='skills-desc'>REACT-NATIVE</span>

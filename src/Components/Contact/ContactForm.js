@@ -115,7 +115,7 @@ export const ContactForm = () => {
     e.preventDefault();
     setLoading(true);
     const sendMail = () => {
-      Axios.post("https://beprt.herokuapp.com/mail", sendMe);
+      Axios.post("https://portbe.herokuapp.com/mail", sendMe);
       setLoading(false);
       alert("메일 전송이 성공적으로 이뤄졌습니다!");
     };

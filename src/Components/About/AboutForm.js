@@ -110,10 +110,6 @@ export const AboutForm = () => {
                   <td>Birth</td>
                   <td>96.01.23</td>
                 </tr>
-                <tr>
-                  <td>Education</td>
-                  <td>백석대학교</td>
-                </tr>
               </tbody>
             </table>
           </div>
@@ -138,6 +134,11 @@ export const AboutForm = () => {
               </tbody>
               <div className='about__career-title'>경력</div>
               <tbody>
+                <tr>
+                  <td className='about__career-desc'>
+                    노마드코더 JS챌린지 수료
+                  </td>
+                </tr>
                 <tr>
                   <td className='about__career-desc'>분당정자청소년수련관</td>
                 </tr>

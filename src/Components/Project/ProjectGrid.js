@@ -24,6 +24,7 @@ const ProjectGridBlock = styled.div`
             width: 100%;
             height: 100%;
             padding: 0 0.3em;
+            object-fit: cover;
         }
     }
 

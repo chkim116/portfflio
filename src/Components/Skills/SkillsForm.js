@@ -8,11 +8,10 @@ import {
     SiReact,
     SiTypescript,
     SiNextDotJs,
-    SiWebpack,
     SiMongodb,
     SiFirebase,
 } from "react-icons/si";
-import { FaAws, FaNodeJs } from "react-icons/fa";
+import { FaNodeJs } from "react-icons/fa";
 
 const WrapSkill = styled.div`
     max-width: 1440px;
@@ -149,10 +148,6 @@ export const SkillsForm = () => {
                             <SiRedux size={42} fill="#8966C0" />
                             <span className="skills-desc">REDUX</span>
                         </div>
-                        <div className="skills__work-desc">
-                            <FaNodeJs size={42} fill="#9EC879" />
-                            <span className="skills-desc">NODEJS</span>
-                        </div>
                     </div>
                 </div>
                 <div className="skills__wrap">
@@ -160,23 +155,15 @@ export const SkillsForm = () => {
                         <div data-tooltip="미숙하나 사용해봤습니다.">
                             Amature
                         </div>
-
                         <div className="skills__work-desc">
-                            <SiNextDotJs size={42} fill="#000000" />
-                            <span className="skills-desc">NEXTJS</span>
-                        </div>
-                        <div className="skills__work-desc">
-                            <SiWebpack size={42} fill="#76CEF5" />
-                            <span className="skills-desc">WEBPACK</span>
+                            <FaNodeJs size={42} fill="#9EC879" />
+                            <span className="skills-desc">NODEJS</span>
                         </div>
                         <div className="skills__work-desc">
                             <SiMongodb size={42} fill="#61AB4F" />
                             <span className="skills-desc">MongoDB</span>
                         </div>
-                        <div className="skills__work-desc">
-                            <FaAws size={42} fill="#F79400" />
-                            <span className="skills-desc">AWS S3</span>
-                        </div>
+
                         <div className="skills__work-desc">
                             <SiFirebase size={42} fill="#d63031" />
                             <span className="skills-desc">Firebase</span>
@@ -193,10 +180,9 @@ export const SkillsForm = () => {
                             <SiTypescript size={42} fill="#73AACE" />
                             <span className="skills-desc">TYPESCRIPT</span>
                         </div>
-
                         <div className="skills__work-desc">
-                            <SiReact size={42} fill="#08D9FF" />
-                            <span className="skills-desc">REACT-NATIVE</span>
+                            <SiNextDotJs size={42} fill="#000000" />
+                            <span className="skills-desc">NEXTJS</span>
                         </div>
                     </div>
                 </div>

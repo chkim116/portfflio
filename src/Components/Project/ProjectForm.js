@@ -7,8 +7,6 @@ import blogImg2 from "../../assets/images/마이블로그태그.png";
 import jeogiImg from "../../assets/images/저기어때.png";
 import jeogiImg2 from "../../assets/images/저기어때2.png";
 import jeogiImg3 from "../../assets/images/저기어때3.png";
-import startImg from "../../assets/images/스타트페이지.png";
-import startImg2 from "../../assets/images/스타트페이지2.png";
 import nwitImg from "../../assets/images/느위터1.png";
 import nwitImg2 from "../../assets/images/느위터2.png";
 import nwitImg3 from "../../assets/images/느위터3.png";
@@ -67,7 +65,7 @@ export const ProjectForm = () => {
                     "DB의 설계부터 프론트와 백, 배포에 이르기까지 모든 단계를 도맡아 함으로써",
                     "프론트-백엔드 전반에 걸쳐 깊게 생각할 수 있었습니다.",
                     "협업의 중요성 및 아키텍처의 필요성",
-                    "더 나아가 간략한 상태관리(ex 리덕스 비동기 요청)의 필요성들이 절실히 느껴졌던 프로젝트였습니다.",
+                    "더 나아가 리덕스 사가와 같은 상태 관리의 필요성이 와닿았던 프로젝트였습니다.",
                     "Jwt 토큰을 활용한 로그인 인증 및 리액트 훅과 리덕스를 이용한",
                     "게시물의 등록, 수정, 삭제 등 다양한 기능을 구현했고",
                     "React-quill 텍스트 에디터, 게시글 Pagination을 구현했습니다.",
@@ -88,20 +86,7 @@ export const ProjectForm = () => {
                 pageLink: "https://chkim116.github.io/jeogi/",
                 gitLink: "https://github.com/chkim116/jeogi",
             });
-        title === "스타트페이지" &&
-            setProject({
-                img: [startImg, startImg2],
-                stack: "Next JS",
-                desc: [
-                    "Next JS를 이용해 만든 브라우저의 스타트 페이지입니다.",
-                    "리액트에서의 로컬스토리지의 활용 방법과 Next JS안에서 리덕스를 사용하는 방법을 알 수 있었습니다.",
-                    "DEL버튼을 클릭하면 북마크를 삭제할 수 있고 '새 창으로 열기'를 눌러 새 창으로 열 수 있습니다.",
-                    "검색 바에서 네이버/다음/구글 옵션을 선택하여 사이트를 바꿔 검색합니다.",
-                    "사용자의 위치를 가져와 날씨 API를 보여주고 로컬 스토리지에 북마크 URL를 저장하여 항상 유지합니다.",
-                ],
-                pageLink: "https://starte.netlify.app/",
-                gitLink: "https://github.com/chkim116/start_page",
-            });
+
         setShow(true);
     }, []);
 

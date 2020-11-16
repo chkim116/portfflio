@@ -29,61 +29,65 @@ const SkillsBlock = styled.div`
     @media all and (max-width: 768px) {
         flex-direction: column;
     }
+`;
 
-    .skills-bg {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-    }
+const SkillsBg = styled.div`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+`;
 
-    .skills__wrap {
-        width: 33%;
-        padding: 1em;
-        display: flex;
+const WrapSkills = styled.div`
+    width: 33%;
+    padding: 1em;
+    display: flex;
 
-        &:nth-child(2),
-        &:nth-child(3) {
-            border-right: 1px solid black;
-
-            @media all and (max-width: 768px) {
-                border: none;
-            }
-        }
+    &:nth-child(2),
+    &:nth-child(3) {
+        border-right: 1px solid black;
 
         @media all and (max-width: 768px) {
-            width: 80%;
-            margin: 0 auto;
-        }
-        @media all and (max-width: 400px) {
-            width: 100%;
+            border: none;
         }
     }
 
-    .skills__work {
+    @media all and (max-width: 768px) {
+        width: 80%;
+        margin: 0 auto;
+    }
+    @media all and (max-width: 400px) {
         width: 100%;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        flex-direction: column;
-        padding: 1em;
-        position: relative;
+    }
+`;
+const SkillsWork = styled.div`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 1em;
+    position: relative;
 
-        @media all and (max-width: 768px) {
-            padding: 0.5em;
-        }
+    @media all and (max-width: 768px) {
+        padding: 0.5em;
+    }
+`;
+
+const SkillsDesc = styled.div`
+    display: flex;
+    width: 100%;
+    margin: 0.3em;
+    position: relative;
+
+    & > div {
+        line-height: 42px;
+        margin-left: 5px;
     }
 
-    .skills__work-desc {
-        display: flex;
-        width: 100%;
-        margin: 0.3em;
-        position: relative;
-
-        .skills-desc {
-            line-height: 42px;
-            margin-left: 5px;
-        }
+    span {
+        line-height: 40px;
+        margin-left: 9px;
     }
 
     [data-tooltip] {
@@ -122,70 +126,70 @@ export const SkillsForm = () => {
         <WrapSkill className="Skills">
             <h1 className="portfoilo__title">Skills</h1>
             <SkillsBlock>
-                <div className="skills-bg"></div>
-                <div className="skills__wrap">
-                    <div className="skills__work">
+                <SkillsBg></SkillsBg>
+                <WrapSkills>
+                    <SkillsWork>
                         <div data-tooltip="프로젝트에 사용 가능합니다.">
                             Awesome
                         </div>
-                        <div className="skills__work-desc">
+                        <SkillsDesc>
                             <SiHtml5 size={42} fill="#E44F26" />
-                            <div className="skills-desc">HTML5</div>
-                        </div>
-                        <div className="skills__work-desc">
+                            <span>HTML5</span>
+                        </SkillsDesc>
+                        <SkillsDesc>
                             <SiCss3 size={42} fill="#007ACC" />
-                            <span className="skills-desc">CSS3</span>
-                        </div>
-                        <div className="skills__work-desc">
+                            <span>CSS3</span>
+                        </SkillsDesc>
+                        <SkillsDesc>
                             <SiJavascript size={42} fill="#F7DF1E" />
-                            <span className="skills-desc">JAVASCRIPT</span>
-                        </div>
-                        <div className="skills__work-desc">
+                            <span>JAVASCRIPT</span>
+                        </SkillsDesc>
+                        <SkillsDesc>
                             <SiReact size={42} fill="#08D9FF" />
-                            <span className="skills-desc">REACT</span>
-                        </div>
-                        <div className="skills__work-desc">
+                            <span>REACT</span>
+                        </SkillsDesc>
+                        <SkillsDesc>
                             <SiRedux size={42} fill="#8966C0" />
-                            <span className="skills-desc">REDUX</span>
-                        </div>
-                    </div>
-                </div>
-                <div className="skills__wrap">
-                    <div className="skills__work">
+                            <span>REDUX</span>
+                        </SkillsDesc>
+                    </SkillsWork>
+                </WrapSkills>
+                <WrapSkills>
+                    <SkillsWork>
                         <div data-tooltip="미숙하나 사용해봤습니다.">
                             Amature
                         </div>
-                        <div className="skills__work-desc">
+                        <SkillsDesc>
                             <FaNodeJs size={42} fill="#9EC879" />
-                            <span className="skills-desc">NODEJS</span>
-                        </div>
-                        <div className="skills__work-desc">
+                            <span>NODEJS</span>
+                        </SkillsDesc>
+                        <SkillsDesc>
                             <SiMongodb size={42} fill="#61AB4F" />
-                            <span className="skills-desc">MongoDB</span>
-                        </div>
+                            <span>MongoDB</span>
+                        </SkillsDesc>
 
-                        <div className="skills__work-desc">
+                        <SkillsDesc>
                             <SiFirebase size={42} fill="#d63031" />
-                            <span className="skills-desc">Firebase</span>
-                        </div>
-                    </div>
-                </div>
+                            <span>Firebase</span>
+                        </SkillsDesc>
+                    </SkillsWork>
+                </WrapSkills>
 
-                <div className="skills__wrap">
-                    <div className="skills__work">
+                <WrapSkills>
+                    <SkillsWork>
                         <div data-tooltip="배우고 있는 스킬입니다.">
                             Beginner
                         </div>
-                        <div className="skills__work-desc">
+                        <SkillsDesc>
                             <SiTypescript size={42} fill="#73AACE" />
-                            <span className="skills-desc">TYPESCRIPT</span>
-                        </div>
-                        <div className="skills__work-desc">
+                            <span>TYPESCRIPT</span>
+                        </SkillsDesc>
+                        <SkillsDesc>
                             <SiNextDotJs size={42} fill="#000000" />
-                            <span className="skills-desc">NEXTJS</span>
-                        </div>
-                    </div>
-                </div>
+                            <span>NEXTJS</span>
+                        </SkillsDesc>
+                    </SkillsWork>
+                </WrapSkills>
             </SkillsBlock>
         </WrapSkill>
     );

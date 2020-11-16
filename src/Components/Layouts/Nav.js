@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 import profile from "../../assets/images/증명사진.jpg";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { NavList } from "./NavList";
 
 const NavBlock = styled.nav`
     width: 100%;
@@ -26,75 +27,28 @@ const NavBlock = styled.nav`
             cursor: pointer;
         }
     }
+`;
 
-    .nav__items {
-        display: flex;
-        font-size: 14px;
+const WrapImg = styled.div`
+    display: flex;
+    height: 54px;
+    align-items: center;
 
-        @media all and (max-width: 768px) {
-            position: fixed;
-            display: ${(props) => (props.show ? "block" : "none")};
-            background: #fdfdfd;
-            flex-direction: column;
-            width: 100%;
-            top: 54px;
-            height: 350px;
-            left: 0;
-            align-items: center;
-            text-align: center;
-
-            .nav__items-list {
-                margin: 0.4em 0.6em;
-            }
-        }
-        .nav__items-list {
-            padding: 1em;
-            cursor: pointer;
-
-            &:hover {
-                background: #b9dedf;
-                border-radius: 12px;
-            }
-        }
+    div {
+        font-size: 20px;
+        margin-left: 0.6em;
     }
-
-    .wrap__img {
-        display: flex;
-        height: 54px;
-        align-items: center;
-
-        .nav__title {
-            font-size: 20px;
-            margin-left: 0.5 em;
-        }
-        .nav__img {
-            width: 35px;
-            height: 35px;
-            margin: 0 1em;
-            object-fit: cover;
-            border-radius: 50%;
-            @media all and (max-width: 768px) {
-                margin: 0;
-            }
+    img {
+        width: 35px;
+        height: 35px;
+        margin: 0 1em;
+        object-fit: cover;
+        border-radius: 50%;
+        @media all and (max-width: 768px) {
+            margin: 0;
         }
     }
 `;
-
-const NavList = ({ navList, onClick }) => {
-    return (
-        <ul className="nav__items">
-            {navList.map((list, index) => (
-                <li
-                    onClick={onClick}
-                    className="nav__items-list"
-                    data-ref={`${list}`}
-                    key={index}>
-                    {list}
-                </li>
-            ))}
-        </ul>
-    );
-};
 
 export const Nav = () => {
     const navList = ["Home", "Skills", "Project", "About", "Contact"];
@@ -134,10 +88,10 @@ export const Nav = () => {
 
     return (
         <NavBlock bgColor={bgColor} show={show} onClick={onClose}>
-            <div className="wrap__img">
-                <img className="nav__img" src={profile} alt="로고이미지" />
-                <div className="nav__title">Portfolio</div>
-            </div>
+            <WrapImg>
+                <img src={profile} alt="로고이미지" />
+                <div>Portfolio</div>
+            </WrapImg>
             <NavList navList={navList} onClick={onClick} />
             <GiHamburgerMenu className="media__nav" onClick={onNav} size={24} />
         </NavBlock>

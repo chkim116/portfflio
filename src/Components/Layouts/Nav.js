@@ -73,13 +73,13 @@ export const Nav = () => {
     useEffect(() => {
         document.addEventListener("scroll", handleScrollIntoView);
         return () => {
-            document.removeEventListener();
+            document.removeEventListener("scroll", handleScrollIntoView);
         };
         // eslint-disable-next-line
     }, []);
 
     const onNav = () => {
-        !show ? setShow(true) : setShow(false);
+        setShow((prev) => !prev);
     };
 
     const onClose = () => {
@@ -92,7 +92,7 @@ export const Nav = () => {
                 <img src={profile} alt="로고이미지" />
                 <div>Portfolio</div>
             </WrapImg>
-            <NavList navList={navList} onClick={onClick} />
+            <NavList show={show} navList={navList} onClick={onClick} />
             <GiHamburgerMenu className="media__nav" onClick={onNav} size={24} />
         </NavBlock>
     );

@@ -30,9 +30,9 @@ const NavItemList = styled.li`
     }
 `;
 
-export const NavList = ({ navList, onClick }) => {
+export const NavList = ({ navList, onClick, show }) => {
     return (
-        <NavItems>
+        <NavItems show={show}>
             {navList.map((list, index) => (
                 <NavItemList onClick={onClick} data-ref={`${list}`} key={index}>
                     {list}

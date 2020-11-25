@@ -96,8 +96,8 @@ export const ProjectForm = () => {
 
     return (
         <>
-            <ProjectBlock>
-                <h1 className="Project">My Project</h1>
+            <ProjectBlock className="Project">
+                <h1>My Project</h1>
                 <ProjectMenu>
                     <ProjectGrid show={show} onClick={onClick} />
                 </ProjectMenu>

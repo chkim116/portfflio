@@ -1,22 +1,21 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  padding: 0;
-  margin: 0;
-  color: #333333;
-  font-family: sans-serif;
-  overflow-y: scroll;
-  font-family: "InfinitySans-RegularA1";
-  background: #fdfdfd;
+    padding: 0;
+    margin: 0;
+    color: #333333;
+    font-family: sans-serif;
+    overflow-y: scroll;
+    font-family: "InfinitySans-RegularA1";
+    background: #fdfdfd;
 }
 
-h1,
 h2,
 h3,
 h4,
@@ -27,80 +26,80 @@ li,
 ul,
 tr,
 td {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
 tr,
 td {
-  padding: 0.2em;
-  text-align: left;
-  font-size: 1rem;
+    padding: 0.2em;
+    text-align: left;
+    font-size: 1rem;
 }
 
 h1 {
-  font-size: 1.5rem;
+    font-size: 1.5rem;
 }
 
 a {
-  text-decoration: none;
-  color: #333333;
+    text-decoration: none;
+    color: #333333;
 }
 
 button,
 input {
-  outline: none;
-  border: none;
-  background: transparent;
+    outline: none;
+    border: none;
+    background: transparent;
 }
 
 .portfoilo__title {
-  padding: 1em 0;
-  margin: 1em 0;
-  width: 100%;
-  text-align: center;
-  position: relative;
+    padding: 1em 0;
+    margin: 1em 0;
+    width: 100%;
+    text-align: center;
+    position: relative;
 }
 
 .portfoilo__title::before {
-  position: absolute;
-  bottom: 5px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 10%;
-  height: 2px;
-  content: "";
-  background: #312e41;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10%;
+    height: 2px;
+    content: "";
+    background: #312e41;
 }
 
 .loading__box {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 40px;
-  height: 40px;
-  border: 10px solid #aad4da;
-  border-top: 10px solid #b9dedf;
-  border-radius: 50em;
-  animation-name: loading;
-  animation-duration: 0.8s;
-  animation-iteration-count: infinite;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border: 10px solid #aad4da;
+    border-top: 10px solid #b9dedf;
+    border-radius: 50em;
+    animation-name: loading;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
 }
 
 @keyframes loading {
-  from {
-    transform: translate(-50%, -50%) rotate(0);
-  }
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
+    from {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 @font-face {
-  font-family: "InfinitySans-RegularA1";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
+    font-family: "InfinitySans-RegularA1";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff")
+        format("woff");
+    font-weight: normal;
+    font-style: normal;
 }

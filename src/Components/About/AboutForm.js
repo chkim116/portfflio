@@ -6,6 +6,7 @@ const AboutBlock = styled.div`
     width: 100%;
     margin-top: 3em;
     .about {
+        flex-direction: column;
         display: flex;
         width: 100%;
         justify-content: center;
@@ -24,6 +25,7 @@ const AboutContainer = styled.div`
     justify-content: center;
     align-items: center;
     padding: 1em;
+    margin: 0 auto;
 
     @media all and (max-width: 400px) {
         width: 200px;

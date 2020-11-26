@@ -2,11 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import {
     SiHtml5,
-    SiRedux,
     SiCss3,
     SiJavascript,
     SiReact,
-    SiTypescript,
     SiNextDotJs,
     SiMongodb,
     SiFirebase,
@@ -72,23 +70,6 @@ const SkillsWork = styled.div`
     @media all and (max-width: 768px) {
         padding: 0.5em;
     }
-`;
-
-const SkillsDesc = styled.div`
-    display: flex;
-    width: 100%;
-    margin: 0.3em;
-    position: relative;
-
-    & > div {
-        line-height: 42px;
-        margin-left: 5px;
-    }
-
-    span {
-        line-height: 40px;
-        margin-left: 9px;
-    }
 
     [data-tooltip] {
         font-weight: bold;
@@ -121,6 +102,23 @@ const SkillsDesc = styled.div`
     }
 `;
 
+const SkillsDesc = styled.div`
+    display: flex;
+    width: 100%;
+    margin: 0.3em;
+    position: relative;
+
+    & > div {
+        line-height: 42px;
+        margin-left: 5px;
+    }
+
+    span {
+        line-height: 40px;
+        margin-left: 9px;
+    }
+`;
+
 export const SkillsForm = () => {
     return (
         <WrapSkill className="Skills">
@@ -129,9 +127,6 @@ export const SkillsForm = () => {
                 <SkillsBg></SkillsBg>
                 <WrapSkills>
                     <SkillsWork>
-                        <div data-tooltip="프로젝트에 사용 가능합니다.">
-                            Awesome
-                        </div>
                         <SkillsDesc>
                             <SiHtml5 size={42} fill="#E44F26" />
                             <span>HTML5</span>
@@ -144,25 +139,27 @@ export const SkillsForm = () => {
                             <SiJavascript size={42} fill="#F7DF1E" />
                             <span>JAVASCRIPT</span>
                         </SkillsDesc>
+                    </SkillsWork>
+                </WrapSkills>
+                <WrapSkills>
+                    <SkillsWork>
                         <SkillsDesc>
                             <SiReact size={42} fill="#08D9FF" />
                             <span>REACT</span>
                         </SkillsDesc>
                         <SkillsDesc>
-                            <SiRedux size={42} fill="#8966C0" />
-                            <span>REDUX</span>
+                            <SiNextDotJs size={42} fill="#000000" />
+                            <span>NEXTJS</span>
                         </SkillsDesc>
-                    </SkillsWork>
-                </WrapSkills>
-                <WrapSkills>
-                    <SkillsWork>
-                        <div data-tooltip="미숙하나 사용해봤습니다.">
-                            Amature
-                        </div>
                         <SkillsDesc>
                             <FaNodeJs size={42} fill="#9EC879" />
                             <span>NODEJS</span>
                         </SkillsDesc>
+                    </SkillsWork>
+                </WrapSkills>
+
+                <WrapSkills>
+                    <SkillsWork>
                         <SkillsDesc>
                             <SiMongodb size={42} fill="#61AB4F" />
                             <span>MongoDB</span>
@@ -171,22 +168,6 @@ export const SkillsForm = () => {
                         <SkillsDesc>
                             <SiFirebase size={42} fill="#d63031" />
                             <span>Firebase</span>
-                        </SkillsDesc>
-                    </SkillsWork>
-                </WrapSkills>
-
-                <WrapSkills>
-                    <SkillsWork>
-                        <div data-tooltip="배우고 있는 스킬입니다.">
-                            Beginner
-                        </div>
-                        <SkillsDesc>
-                            <SiTypescript size={42} fill="#73AACE" />
-                            <span>TYPESCRIPT</span>
-                        </SkillsDesc>
-                        <SkillsDesc>
-                            <SiNextDotJs size={42} fill="#000000" />
-                            <span>NEXTJS</span>
                         </SkillsDesc>
                     </SkillsWork>
                 </WrapSkills>

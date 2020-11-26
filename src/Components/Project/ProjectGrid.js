@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import blogImg from "../../assets/images/마이블로그메인.png";
-import jeogiImg from "../../assets/images/저기어때.png";
 import nwitImg from "../../assets/images/느위터1.png";
 
 const ProjectGridBlock = styled.div`
@@ -66,11 +65,6 @@ export const ProjectGrid = ({ onClick }) => {
         {
             title: "My Blog",
             img: blogImg,
-        },
-
-        {
-            title: "저기어때",
-            img: jeogiImg,
         },
     ];
 

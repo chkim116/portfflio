@@ -20,7 +20,6 @@ const Section = styled.section`
     position: absolute;
     width: 100%;
     height: 100%;
-    max-width: 1920px;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -41,7 +40,6 @@ const SectionImgBox = styled.div`
         height: 100%;
         position: absolute;
         object-fit: cover;
-        max-width: 1920px;
         left: 50%;
         bottom: 0;
         transform: translateX(-50%);

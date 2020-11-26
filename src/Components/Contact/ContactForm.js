@@ -80,8 +80,9 @@ const Button = styled.button`
     box-shadow: inset 0 2px 4px 0 hsla(0, 0%, 0%, 0.08);
     border: none;
     cursor: pointer;
+    padding: 0.5em;
     border-radius: 33px;
-    font-weight: bold;
+    font-size: 12px;
 
     &:hover {
         color: rgba(0, 0, 0, 0.2);

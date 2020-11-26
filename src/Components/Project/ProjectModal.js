@@ -112,7 +112,7 @@ const ProjectModalImgBox = styled.div`
     position: relative;
     width: 80%;
     top: 2em;
-    margin: 0 auto 1.5em auto;
+    margin: 0 auto;
 
     & > img {
         width: 100%;

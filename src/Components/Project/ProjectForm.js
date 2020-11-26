@@ -4,9 +4,7 @@ import { ProjectGrid } from "./ProjectGrid";
 import { ProjectModal } from "./ProjectModal";
 import blogImg from "../../assets/images/마이블로그메인.png";
 import blogImg2 from "../../assets/images/마이블로그태그.png";
-import jeogiImg from "../../assets/images/저기어때.png";
-import jeogiImg2 from "../../assets/images/저기어때2.png";
-import jeogiImg3 from "../../assets/images/저기어때3.png";
+
 import nwitImg from "../../assets/images/느위터1.png";
 import nwitImg2 from "../../assets/images/느위터2.png";
 import nwitImg3 from "../../assets/images/느위터3.png";
@@ -18,6 +16,7 @@ import "slick-carousel/slick/slick-theme.css";
 const ProjectBlock = styled.div`
     max-width: 1000px;
     margin: 0 auto;
+    padding-top: 3em;
     text-align: center;
     position: relative;
 `;
@@ -69,14 +68,6 @@ export const ProjectForm = () => {
                 ],
                 pageLink: "https://www.kormelon.cf",
                 gitLink: "https://www.github.com/chkim116/myblog",
-            });
-        title === "저기어때" &&
-            setProject({
-                img: [jeogiImg, jeogiImg2, jeogiImg3],
-                stack: "Html, Css, Javascript",
-                desc: ["이미지 슬라이더", "실제로 여기어때 검색이 가능합니다."],
-                pageLink: "https://chkim116.github.io/jeogi/",
-                gitLink: "https://github.com/chkim116/jeogi",
             });
 
         setShow(true);

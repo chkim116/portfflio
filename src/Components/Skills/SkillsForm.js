@@ -8,6 +8,7 @@ import {
     SiNextDotJs,
     SiMongodb,
     SiFirebase,
+    SiTypescript,
 } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
 
@@ -138,6 +139,10 @@ export const SkillsForm = () => {
                         <SkillsDesc>
                             <SiJavascript size={42} fill="#F7DF1E" />
                             <span>JAVASCRIPT</span>
+                        </SkillsDesc>
+                        <SkillsDesc>
+                            <SiTypescript size={42} fill="#007ACC" />
+                            <span>TYPESCRIPT</span>
                         </SkillsDesc>
                     </SkillsWork>
                 </WrapSkills>

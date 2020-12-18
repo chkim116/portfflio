@@ -1,8 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import blogImg from "../../assets/images/마이블로그메인.png";
-import nwitImg from "../../assets/images/느위터1.png";
-
+import blogImg from "../../assets/images/blog1.png";
+import nwitImg from "../../assets/images/nwitter1.png";
+import bookImg from "../../assets/images/bookdb1.png";
+import startImg from "../../assets/images/start.png";
+import corona from "../../assets/images/stat.png";
+import jeogi from "../../assets/images/저기어때.png";
 const ProjectGridBlock = styled.div`
     display: flex;
     text-align: center;
@@ -58,6 +61,10 @@ const ProjectMore = styled.div`
 export const ProjectGrid = ({ onClick }) => {
     const project = [
         {
+            title: "BookDB",
+            img: bookImg,
+        },
+        {
             title: "Nwitter",
             img: nwitImg,
         },
@@ -66,6 +73,9 @@ export const ProjectGrid = ({ onClick }) => {
             title: "My Blog",
             img: blogImg,
         },
+        { title: "Starter Page", img: startImg },
+        { title: "Corona Data", img: corona },
+        { title: "저기 어때", img: jeogi },
     ];
 
     return (

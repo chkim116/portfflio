@@ -39,7 +39,7 @@ const ProjectModalBox = styled.div`
     transform: translate(-50%, -50%);
 
     @media all and (max-width: 768px) {
-        width: 80%;
+        width: 90%;
         height: 55%;
     }
 `;
@@ -110,7 +110,7 @@ const ProjectModalForm = styled.div`
 
 const ProjectModalImgBox = styled.div`
     position: relative;
-    width: 80%;
+    width: 90%;
     top: 2em;
     margin: 0 auto;
 
@@ -145,12 +145,17 @@ const ProjectStack = styled.div`
 `;
 
 const ProjectDesc = styled.div`
-    width: 80%;
+    width: 90%;
     z-index: 56;
     flex-direction: column;
     margin: 0 auto;
     padding-bottom: 1em;
     align-items: center;
+
+    @media all and (max-width: 768px) {
+        width: 96%;
+        font-size: 12px;
+    }
 `;
 
 export const ProjectModal = ({ show, onClick, project }) => {
@@ -185,10 +190,10 @@ export const ProjectModal = ({ show, onClick, project }) => {
                         )}
                         <ProjectLink>
                             <a href={project.pageLink} target="blank">
-                                Go Page
+                                Page
                             </a>
                             <a href={project.gitLink} target="blank">
-                                Go Github
+                                Github
                             </a>
                         </ProjectLink>
 

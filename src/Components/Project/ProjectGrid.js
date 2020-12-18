@@ -6,6 +6,7 @@ import bookImg from "../../assets/images/bookdb1.png";
 import startImg from "../../assets/images/start.png";
 import corona from "../../assets/images/stat.png";
 import jeogi from "../../assets/images/저기어때.png";
+
 const ProjectGridBlock = styled.div`
     display: flex;
     text-align: center;

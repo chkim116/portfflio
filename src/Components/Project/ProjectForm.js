@@ -24,6 +24,12 @@ import corona from "../../assets/images/stat.png";
 import jeogi from "../../assets/images/저기어때.png";
 import jeogi2 from "../../assets/images/저기어때2.png";
 import jeogi3 from "../../assets/images/저기어때3.png";
+import gte from "../../assets/images/gte1.png";
+import gte2 from "../../assets/images/gte2.png";
+import jaswiki1 from "../../assets/images/jaswiki1.png";
+import jaswiki2 from "../../assets/images/jaswiki2.png";
+import jaswiki3 from "../../assets/images/jaswiki3.png";
+import jaswiki4 from "../../assets/images/jaswiki4.png";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -56,6 +62,33 @@ export const ProjectForm = () => {
         if (!title) {
             return;
         }
+        title === "Jaswiki" &&
+            setProject({
+                img: [jaswiki1, jaswiki2, jaswiki3, jaswiki4],
+                stack:
+                    "Next, Typescript, Redux/Saga, Express, Emotion, EC2, MongoDB",
+                desc: [
+                    "Jaswiki는 자바스크립트 위키피디아로, 자바스크립트를 사용하는 개발자들이 코드와 예제들을 마음껏 문서화시키고",
+                    "허락된 게시물에 대해 자유롭게 편집할 수 있도록 지원하는 사이트입니다.",
+                    "상세한 예제들로 가이드함으로써 이전에 해보지 못한 기능을 추가하려는 개발자들이 영어 검색이 아닌 한글 검색으로도 최신의 정보를 얻을 수 있고,",
+                    "손쉬운 접근이 가능하도록 만들고자 했습니다.",
+                ],
+                pageLink: "https://www.jaswiki.com/",
+                gitLink: "https://www.github.com/chkim116/jaswiki",
+            });
+        title === "GTE" &&
+            setProject({
+                img: [gte, gte2],
+                stack: "Next, Emotion, Vercel",
+                desc: [
+                    "Get To Emoji는 이모지를 손쉽게 검색하고, 빠르게 사용하기 위해 만든 웹사이트입니다.",
+                    "이전엔 이모지를 쓰려고 구글에 검색해 가져오는 방식을 취했지만, 이 사이트를 사용하며 효율적인 측면이 향상됐습니다.",
+                    "검색된 이모지를 클릭하면 자동으로 클립보드에 복사 됩니다.",
+                ],
+                pageLink: "https://gte.vercel.app/",
+                gitLink: "https://www.github.com/chkim116/gte",
+            });
+
         title === "BookDB" &&
             setProject({
                 img: [
@@ -67,7 +100,7 @@ export const ProjectForm = () => {
                     bookImg6,
                 ],
                 stack:
-                    "MongoDB, Next, Typescript, Redux/Saga, Express, Emotion, Heroku&Netlify",
+                    "Next, Typescript, Redux/Saga, Express, Emotion, Heroku&Netlify, MongoDB",
 
                 desc: [
                     "북디비의 시작은 다양한 책들을 간단하게 리뷰할 수 있는 사이트가 있었으면 좋겠다는 생각에서부터 시작됐습니다.",
@@ -93,7 +126,7 @@ export const ProjectForm = () => {
         title === "My Blog" &&
             setProject({
                 img: [blogImg, blogImg2, blogImg3, blogImg4, blogImg5],
-                stack: "MongoDB, React, Redux, Express, Scss, Heroku&Netlify",
+                stack: "React, Redux, Express, Scss, Heroku&Netlify, MongoDB",
                 desc: [
                     "마이블로그 프로젝트의 동기는 현재 운영 중인 네이버 블로그와는 별개로,",
                     "직접 블로그를 개발해 운영하고 싶은 욕구에서부터 출발하였습니다.",
@@ -107,7 +140,7 @@ export const ProjectForm = () => {
         title === "Starter Page" &&
             setProject({
                 img: [startImg, startImg2, startImg3],
-                stack: "MongoDB, Next, Redux, Styled-Components, Netlify",
+                stack: "Next, Redux, Styled-Components, Netlify, MongoDB",
                 desc: [
                     "검색을 위해 네이버나 구글에 접근하는 중간 과정을 없애고",
                     "북마크 추가 및 투두리스트 작성까지 할 수 있는 복합적인 페이지를 만들고자 했습니다.",

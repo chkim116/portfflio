@@ -6,6 +6,8 @@ import bookImg from "../../assets/images/bookdb1.png";
 import startImg from "../../assets/images/start.png";
 import corona from "../../assets/images/stat.png";
 import jeogi from "../../assets/images/저기어때.png";
+import gte from "../../assets/images/gte1.png";
+import jaswiki from "../../assets/images/jaswiki1.png";
 
 const ProjectGridBlock = styled.div`
     display: flex;
@@ -61,6 +63,8 @@ const ProjectMore = styled.div`
 
 export const ProjectGrid = ({ onClick }) => {
     const project = [
+        { title: "Jaswiki", img: jaswiki },
+        { title: "GTE", img: gte },
         {
             title: "BookDB",
             img: bookImg,

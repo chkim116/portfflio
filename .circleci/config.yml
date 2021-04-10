@@ -1,22 +1,29 @@
 version: 2.1
-orbs:
-  dotenv: anilanar/dotenv@volatile
+
+aliases:
+    - &step_production_dotenv
+      run:
+          name: Process .env file variables
+          command: echo "export $(grep -v '^#' .env | xargs)" >> $BASH_ENV
+    - &step_stage_dotenv
+      run:
+          name: Process .env file variables
+          command: echo "export $(grep -v '^#' .env | xargs)" >> $BASH_ENV
+
 jobs:
-  build:
-    docker:
-      - image: 'circleci/node:lts'
-    steps:
-      - checkout
-      - dotenv/source:
-          path: .env
-      - run:
-          command: echo $TEST
+    build-stg-static:
+        docker:
+            - image: circleci/node:lts
+        steps:
+            - checkout
+            - *step_stage_dotenv
+            - run: echo $TEST
 
 workflows:
-  test:
-      jobs:
-        - build:
-            filters:
-              branches:
-                only:
-                  - test
+    deploy:
+        jobs:
+            - build-stg-static:
+                  filters:
+                      branches:
+                          only:
+                              - test

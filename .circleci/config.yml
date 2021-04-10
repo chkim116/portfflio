@@ -1,0 +1,22 @@
+version: 2.1
+orbs:
+  dotenv: anilanar/dotenv@volatile
+jobs:
+  build:
+    docker:
+      - image: 'circleci/node:lts'
+    steps:
+      - checkout
+      - dotenv/source:
+          path: .env
+      - run:
+          command: echo $TEST
+
+workflows:
+  test:
+      jobs:
+        - build:
+            filters:
+              branches:
+                only:
+                  - test

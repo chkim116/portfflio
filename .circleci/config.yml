@@ -18,6 +18,8 @@ jobs:
             - checkout
             - *step_stage_dotenv
             - run: echo $TEST
+            - run: echo $URL
+            - run: echo $REACT_APP_URL
 
 workflows:
     deploy:
